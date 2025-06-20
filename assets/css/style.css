@@ -578,10 +578,11 @@ body {
     background: white;
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--border-radius-full);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-xl);
     font-size: 0.875rem;
     font-weight: var(--font-weight-semibold);
     animation: floatBadge 4s ease-in-out infinite;
+    z-index: 15;
 }
 
 .badge i {
