@@ -1,0 +1,184 @@
+ X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Rewrite URLs (opcional)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirigir www a no-www
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+    
+    # Forzar HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ============================================
+# NGINX CONFIGURATION
+# ============================================
+
+# server {
+#     listen 80;
+#     listen [::]:80;
+#     server_name empacame.com www.empacame.com;
+#     return 301 https://empacame.com$request_uri;
+# }
+
+# server {
+#     listen 443 ssl http2;
+#     listen [::]:443 ssl http2;
+#     server_name www.empacame.com;
+#     return 301 https://empacame.com$request_uri;
+# }
+
+# server {
+#     listen 443 ssl http2;
+#     listen [::]:443 ssl http2;
+#     server_name empacame.com;
+#     
+#     root /var/www/empacame;
+#     index index.html;
+#     
+#     # SSL Configuration
+#     ssl_certificate /path/to/ssl/cert.pem;
+#     ssl_certificate_key /path/to/ssl/private.key;
+#     ssl_protocols TLSv1.2 TLSv1.3;
+#     ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512;
+#     
+#     # Gzip Compression
+#     gzip on;
+#     gzip_vary on;
+#     gzip_min_length 1024;
+#     gzip_types text/plain text/css text/xml text/javascript application/javascript application/xml+rss application/json;
+#     
+#     # Security Headers
+#     add_header X-Frame-Options "DENY" always;
+#     add_header X-XSS-Protection "1; mode=block" always;
+#     add_header X-Content-Type-Options "nosniff" always;
+#     add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+#     add_header Content-Security-Policy "default-src 'self' http: https: data: blob: 'unsafe-inline'" always;
+#     
+#     # Cache Control
+#     location ~* \.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
+#         expires 1y;
+#         add_header Cache-Control "public, immutable";
+#     }
+#     
+#     # Main location
+#     location / {
+#         try_files $uri $uri/ =404;
+#     }
+#     
+#     # Error pages
+#     error_page 404 /404.html;
+#     error_page 500 502 503 504 /50x.html;
+# }
+
+# ============================================
+# NODE.JS/EXPRESS CONFIGURATION
+# ============================================
+
+# const express = require('express');
+# const path = require('path');
+# const compression = require('compression');
+# const helmet = require('helmet');
+# 
+# const app = express();
+# const port = process.env.PORT || 3000;
+# 
+# // Security middleware
+# app.use(helmet({
+#     contentSecurityPolicy: {
+#         directives: {
+#             defaultSrc: ["'self'"],
+#             styleSrc: ["'self'", "'unsafe-inline'", "fonts.googleapis.com", "cdnjs.cloudflare.com"],
+#             fontSrc: ["'self'", "fonts.gstatic.com", "cdnjs.cloudflare.com"],
+#             scriptSrc: ["'self'", "cdnjs.cloudflare.com"],
+#             imgSrc: ["'self'", "data:", "https:"],
+#         },
+#     },
+# }));
+# 
+# // Compression middleware
+# app.use(compression());
+# 
+# // Static files
+# app.use(express.static(path.join(__dirname), {
+#     maxAge: '1y',
+#     etag: true
+# }));
+# 
+# // Routes
+# app.get('/', (req, res) => {
+#     res.sendFile(path.join(__dirname, 'index.html'));
+# });
+# 
+# app.listen(port, () => {
+#     console.log(`Empácame server running on port ${port}`);
+# });
+
+# ============================================
+# CLOUDFLARE WORKERS (Edge Computing)
+# ============================================
+
+# addEventListener('fetch', event => {
+#   event.respondWith(handleRequest(event.request))
+# })
+# 
+# async function handleRequest(request) {
+#   const response = await fetch(request)
+#   
+#   // Add security headers
+#   const newResponse = new Response(response.body, response)
+#   newResponse.headers.set('X-Frame-Options', 'DENY')
+#   newResponse.headers.set('X-Content-Type-Options', 'nosniff')
+#   newResponse.headers.set('X-XSS-Protection', '1; mode=block')
+#   
+#   return newResponse
+# }
+
+# ============================================
+# NETLIFY (_redirects)
+# ============================================
+
+# # Redirect www to non-www
+# https://www.empacame.com/* https://empacame.com/:splat 301!
+# 
+# # SPA fallback
+# /*    /index.html   200
+
+# ============================================
+# VERCEL (vercel.json)
+# ============================================
+
+# {
+#   "headers": [
+#     {
+#       "source": "/(.*)",
+#       "headers": [
+#         {
+#           "key": "X-Content-Type-Options",
+#           "value": "nosniff"
+#         },
+#         {
+#           "key": "X-Frame-Options",
+#           "value": "DENY"
+#         },
+#         {
+#           "key": "X-XSS-Protection",
+#           "value": "1; mode=block"
+#         }
+#       ]
+#     }
+#   ],
+#   "redirects": [
+#     {
+#       "source": "/www.empacame.com/(.*)",
+#       "destination": "https://empacame.com/$1",
+#       "permanent": true
+#     }
+#   ]
+# }

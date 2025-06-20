@@ -1,0 +1,75 @@
+{
+  "name": "empacame-landing",
+  "version": "1.0.0",
+  "description": "Landing page moderna y profesional para Empácame - Bolsas de envío duraderas e impermeables",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx http-server -p 8000 -o",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "echo 'Configure your deployment process here'",
+    "lint:css": "echo 'CSS linting would go here'",
+    "lint:js": "echo 'JS linting would go here'",
+    "optimize": "echo 'Image optimization and minification would go here'"
+  },
+  "keywords": [
+    "landing-page",
+    "empacame",
+    "bolsas-envio",
+    "ecommerce",
+    "republica-dominicana",
+    "emprendedores",
+    "packaging",
+    "shipping-bags"
+  ],
+  "author": {
+    "name": "Empácame Team",
+    "email": "info@empacame.com",
+    "url": "https://empacame.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/empacame/landing-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/empacame/landing-page/issues"
+  },
+  "homepage": "https://empacame.com",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "config": {
+    "analytics": {
+      "google_analytics": "GA_TRACKING_ID",
+      "facebook_pixel": "FB_PIXEL_ID"
+    },
+    "contact": {
+      "whatsapp": "+18091234567",
+      "email": "info@empacame.com",
+      "phone": "+1 (809) 123-4567"
+    },
+    "social": {
+      "instagram": "@empacame",
+      "facebook": "EmpacameRD",
+      "twitter": "@empacame"
+    }
+  },
+  "meta": {
+    "title": "Empácame - Envía con Confianza | Bolsas de Envío Profesionales",
+    "description": "Bolsas de envío duraderas, impermeables y con cierre autosellante. Protección total para tus paquetes con presentación profesional. ¡500 unidades disponibles!",
+    "keywords": "bolsas envío, empaque, República Dominicana, impermeable, autosellante, emprendedores, tienda online",
+    "og:image": "assets/images/og-image.jpg",
+    "og:url": "https://empacame.com",
+    "twitter:card": "summary_large_image"
+  }
+}
