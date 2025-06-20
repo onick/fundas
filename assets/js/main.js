@@ -173,7 +173,7 @@ function initContactForm() {
                     '• Mensaje: ' + (message || 'N/A') + '\n\n' +
                     '¡Gracias!';
                 
-                const whatsappURL = 'https://wa.me/18494496394?text=' + encodeURIComponent(whatsappMessage);
+                const whatsappURL = 'https://wa.me/8494496394?text=' + encodeURIComponent(whatsappMessage);
                 
                 // Reset form
                 form.reset();
@@ -238,23 +238,53 @@ function initScrollAnimations() {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    
+                    // Para tarjetas informativas, agregar una pequeña vibración
+                    if (entry.target.classList.contains('info-card')) {
+                        setTimeout(function() {
+                            entry.target.style.transform = 'translateY(0) scale(1.02)';
+                            setTimeout(function() {
+                                entry.target.style.transform = 'translateY(0) scale(1)';
+                            }, 150);
+                        }, parseInt(getComputedStyle(entry.target).transitionDelay) * 1000 + 300);
+                    }
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        // Observe elements for animation - incluir tarjetas informativas
+        const animatedElements = document.querySelectorAll('.benefit-card, .spec-item, .audience-card, .testimonial-card, .faq-item, .info-card');
+        
+        animatedElements.forEach(function(el) {
+            if (!el.classList.contains('fade-in')) {
+                el.classList.add('fade-in');
+            }
+            observer.observe(el);
+        });
+        
+        // Observador especial para tarjetas informativas con threshold más bajo
+        const infoCardObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
             });
         }, {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -20px 0px'
         });
-
-        // Observe elements for animation
-        const animatedElements = document.querySelectorAll('.benefit-card, .spec-item, .audience-card, .testimonial-card, .faq-item');
         
-        animatedElements.forEach(function(el) {
-            el.classList.add('fade-in');
-            observer.observe(el);
+        const infoCards = document.querySelectorAll('.info-card');
+        infoCards.forEach(function(card) {
+            infoCardObserver.observe(card);
         });
+        
     } else {
         // Fallback for older browsers
-        const elements = document.querySelectorAll('.fade-in');
+        const elements = document.querySelectorAll('.fade-in, .info-card');
         elements.forEach(function(el) {
             el.classList.add('visible');
         });
