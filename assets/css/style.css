@@ -670,28 +670,40 @@ body {
     }
 }
 
-/* Móviles pequeños - Corregir texto cortado */
+/* Móviles pequeños - Mucho más espacio */
 @media (max-width: 480px) {
     .hero {
-        padding: var(--space-2xl) 0 var(--space-xl);
+        padding: var(--space-4xl) 0 var(--space-2xl) !important;
+        min-height: auto !important;
+        margin-top: var(--space-xl) !important;
     }
     
     .hero-title {
-        font-size: 2rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: var(--space-sm) !important;
-        padding: 0 var(--space-sm) !important;
+        font-size: 2.2rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: var(--space-xl) !important;
+        padding: 0 var(--space-xl) !important;
+        word-wrap: break-word !important;
+        margin-top: var(--space-lg) !important;
     }
     
     .hero-subtitle {
-        font-size: 1rem !important;
+        font-size: 1.1rem !important;
         line-height: 1.6 !important;
-        padding: 0 var(--space-md) !important;
-        margin-bottom: var(--space-lg) !important;
+        padding: 0 var(--space-2xl) !important;
+        margin-bottom: var(--space-2xl) !important;
+        word-wrap: break-word !important;
+        margin-top: var(--space-lg) !important;
     }
     
     .container {
-        padding: 0 var(--space-sm) !important;
+        padding: var(--space-lg) var(--space-xl) !important;
+        max-width: 100% !important;
+    }
+    
+    .hero .container {
+        padding-top: var(--space-2xl) !important;
+        padding-bottom: var(--space-2xl) !important;
     }
 }
 
