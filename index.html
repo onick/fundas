@@ -12,6 +12,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/proland-style.css">
+    <link rel="stylesheet" href="assets/css/new-pricing-styles.css">
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
@@ -65,8 +66,8 @@
                         <div class="stat-label">Impermeables</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">500</div>
-                        <div class="stat-label">Bolsas por paquete</div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Resistencia</div>
                     </div>
                 </div>
             </div>
@@ -213,14 +214,254 @@
                 <p class="section-subtitle">Encuentra el tamaño perfecto para tu negocio con precios competitivos</p>
             </div>
             
-            <div class="pricing-grid">
+            <!-- Filter tabs -->
+            <div class="pricing-filters">
+                <button class="filter-btn active" data-filter="all">Todos los Tamaños</button>
+                <button class="filter-btn" data-filter="small">Pequeños</button>
+                <button class="filter-btn" data-filter="medium">Medianos</button>
+                <button class="filter-btn" data-filter="large">Grandes</button>
+            </div>
+            
+            <!-- Size Groups -->
+            <div class="pricing-groups">
+                
+                <!-- TAMAÑOS PEQUEÑOS -->
+                <div class="size-group" data-category="small">
+                    <div class="size-header">
+                        <div class="size-info">
+                            <h3>6" × 9" <span class="size-subtitle">Ideal para joyería, cosméticos</span></h3>
+                        </div>
+                        <div class="size-visual small-visual"></div>
+                    </div>
+                    <div class="price-options">
+                        <div class="price-option">
+                            <div class="quantity-badge">Prueba</div>
+                            <h4>100 Unidades</h4>
+                            <div class="price-main">US$9.99</div>
+                            <div class="price-unit">US$0.10 / unidad</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%206x9%20por%20$9.99" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option best-value">
+                            <div class="quantity-badge popular">Mejor Valor</div>
+                            <h4>1000 Unidades</h4>
+                            <div class="price-main">US$39.99</div>
+                            <div class="price-unit">US$0.04 / unidad</div>
+                            <div class="savings">Ahorras 60%</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%206x9%20por%20$39.99" class="btn-price">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="size-group" data-category="small">
+                    <div class="size-header">
+                        <div class="size-info">
+                            <h3>7.5" × 10.5" <span class="size-subtitle">Productos pequeños</span></h3>
+                        </div>
+                        <div class="size-visual small-plus-visual"></div>
+                    </div>
+                    <div class="price-options">
+                        <div class="price-option">
+                            <div class="quantity-badge">Prueba</div>
+                            <h4>100 Unidades</h4>
+                            <div class="price-main">US$9.99</div>
+                            <div class="price-unit">US$0.10 / unidad</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%207.5x10.5%20por%20$9.99" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option">
+                            <div class="quantity-badge">Negocio</div>
+                            <h4>1000 Unidades</h4>
+                            <div class="price-main">US$46.99</div>
+                            <div class="price-unit">US$0.05 / unidad</div>
+                            <div class="savings">Ahorras 50%</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%207.5x10.5%20por%20$46.99" class="btn-price">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAMAÑOS MEDIANOS -->
+                <div class="size-group" data-category="medium">
+                    <div class="size-header">
+                        <div class="size-info">
+                            <h3>9" × 12" <span class="size-subtitle">Ropa ligera, accesorios</span></h3>
+                        </div>
+                        <div class="size-visual medium-visual"></div>
+                    </div>
+                    <div class="price-options">
+                        <div class="price-option">
+                            <div class="quantity-badge">Prueba</div>
+                            <h4>100 Unidades</h4>
+                            <div class="price-main">US$15.95</div>
+                            <div class="price-unit">US$0.16 / unidad</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%209x12%20por%20$15.95" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option">
+                            <div class="quantity-badge">Negocio</div>
+                            <h4>1000 Unidades</h4>
+                            <div class="price-main">US$59.95</div>
+                            <div class="price-unit">US$0.06 / unidad</div>
+                            <div class="savings">Ahorras 62%</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%209x12%20por%20$59.95" class="btn-price">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="size-group" data-category="medium">
+                    <div class="size-header">
+                        <div class="size-info">
+                            <h3>10" × 13" <span class="size-subtitle">Ropa mediana, libros</span></h3>
+                        </div>
+                        <div class="size-visual large-visual"></div>
+                    </div>
+                    <div class="price-options">
+                        <div class="price-option special-offer">
+                            <div class="quantity-badge offer">¡Oferta!</div>
+                            <h4>100 Unidades</h4>
+                            <div class="price-main">US$8.99</div>
+                            <div class="price-unit">US$0.09 / unidad</div>
+                            <div class="original-price">US$9.99</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%2010x13%20por%20$8.99" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option">
+                            <div class="quantity-badge">Negocio</div>
+                            <h4>500 Unidades</h4>
+                            <div class="price-main">US$38.95</div>
+                            <div class="price-unit">US$0.08 / unidad</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20500%20unidades%20de%2010x13%20por%20$38.95" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option">
+                            <div class="quantity-badge">Mayoreo</div>
+                            <h4>1000 Unidades</h4>
+                            <div class="price-main">US$59.99</div>
+                            <div class="price-unit">US$0.06 / unidad</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%2010x13%20por%20$59.99" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option">
+                            <div class="quantity-badge">Distribuidor</div>
+                            <h4>2000 Unidades</h4>
+                            <div class="price-main">US$110.99</div>
+                            <div class="price-unit">US$0.055 / unidad</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%202000%20unidades%20de%2010x13%20por%20$110.99" class="btn-price">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="size-group most-popular" data-category="medium">
+                    <div class="popular-ribbon">MÁS POPULAR</div>
+                    <div class="size-header">
+                        <div class="size-info">
+                            <h3>12" × 15.5" <span class="size-subtitle">Ropa estándar, zapatos</span></h3>
+                        </div>
+                        <div class="size-visual xlarge-visual"></div>
+                    </div>
+                    <div class="price-options">
+                        <div class="price-option">
+                            <div class="quantity-badge">Prueba</div>
+                            <h4>100 Unidades</h4>
+                            <div class="price-main">US$16.90</div>
+                            <div class="price-unit">US$0.17 / unidad</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%2012x15.5%20por%20$16.90" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option best-value">
+                            <div class="quantity-badge popular">⭐ Mejor Opción</div>
+                            <h4>500 Unidades</h4>
+                            <div class="price-main">US$46.99</div>
+                            <div class="price-unit">US$0.09 / unidad</div>
+                            <div class="savings">Ahorras 47%</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20500%20unidades%20de%2012x15.5%20por%20$46.99" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option">
+                            <div class="quantity-badge">Mayoreo</div>
+                            <h4>1000 Unidades</h4>
+                            <div class="price-main">US$89.99</div>
+                            <div class="price-unit">US$0.09 / unidad</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%2012x15.5%20por%20$89.99" class="btn-price">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAMAÑOS GRANDES -->
+                <div class="size-group" data-category="large">
+                    <div class="size-header">
+                        <div class="size-info">
+                            <h3>14.5" × 19" <span class="size-subtitle">Ropa grande, múltiples productos</span></h3>
+                        </div>
+                        <div class="size-visual extra-large-visual"></div>
+                    </div>
+                    <div class="price-options">
+                        <div class="price-option">
+                            <div class="quantity-badge">Prueba</div>
+                            <h4>100 Unidades</h4>
+                            <div class="price-main">US$19.99</div>
+                            <div class="price-unit">US$0.20 / unidad</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%2014.5x19%20por%20$19.99" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option">
+                            <div class="quantity-badge">Negocio</div>
+                            <h4>400 Unidades</h4>
+                            <div class="price-main">US$69.99</div>
+                            <div class="price-unit">US$0.17 / unidad</div>
+                            <div class="savings">Ahorras 15%</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20400%20unidades%20de%2014.5x19%20por%20$69.99" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option">
+                            <div class="quantity-badge">Mayoreo</div>
+                            <h4>1000 Unidades</h4>
+                            <div class="price-main">US$149.99</div>
+                            <div class="price-unit">US$0.15 / unidad</div>
+                            <div class="savings">Ahorras 25%</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%2014.5x19%20por%20$149.99" class="btn-price">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="size-group" data-category="large">
+                    <div class="size-header">
+                        <div class="size-info">
+                            <h3>19" × 24" <span class="size-subtitle">Productos voluminosos, múltiples items</span></h3>
+                        </div>
+                        <div class="size-visual jumbo-visual"></div>
+                    </div>
+                    <div class="price-options">
+                        <div class="price-option">
+                            <div class="quantity-badge">Mini</div>
+                            <h4>50 Unidades</h4>
+                            <div class="price-main">US$19.98</div>
+                            <div class="price-unit">US$0.40 / unidad</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%2050%20unidades%20de%2019x24%20por%20$19.98" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option">
+                            <div class="quantity-badge">Prueba</div>
+                            <h4>100 Unidades</h4>
+                            <div class="price-main">US$35.95</div>
+                            <div class="price-unit">US$0.36 / unidad</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%2019x24%20por%20$35.95" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option">
+                            <div class="quantity-badge">Negocio</div>
+                            <h4>200 Unidades</h4>
+                            <div class="price-main">US$68.90</div>
+                            <div class="price-unit">US$0.34 / unidad</div>
+                            <div class="savings">Ahorras 15%</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20200%20unidades%20de%2019x24%20por%20$68.90" class="btn-price">Comprar</a>
+                        </div>
+                        <div class="price-option">
+                            <div class="quantity-badge">Mayoreo</div>
+                            <h4>400 Unidades</h4>
+                            <div class="price-main">US$99.99</div>
+                            <div class="price-unit">US$0.25 / unidad</div>
+                            <div class="savings">Ahorras 37%</div>
+                            <a href="https://wa.me/18494496394?text=Quiero%20400%20unidades%20de%2019x24%20por%20$99.99" class="btn-price">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 <!-- Fila 1 - 5 tarjetas -->
                 <div class="price-card">
                     <div class="size-visual">
                         <div class="size-box small"></div>
                         <span class="size-label">6" × 9"</span>
                     </div>
-                    <h3>100 PCS</h3>
+                    <h3>100 Unidades</h3>
                     <div class="price">US$9.99</div>
                     <div class="price-per-unit">US$0.10 / unidad</div>
                 </div>
@@ -230,7 +471,7 @@
                         <div class="size-box small"></div>
                         <span class="size-label">6" × 9"</span>
                     </div>
-                    <h3>1000 PCS</h3>
+                    <h3>1000 Unidades</h3>
                     <div class="price">US$39.99</div>
                     <div class="price-per-unit">US$0.04 / unidad</div>
                 </div>
@@ -240,7 +481,7 @@
                         <div class="size-box small-plus"></div>
                         <span class="size-label">7.5" × 10.5"</span>
                     </div>
-                    <h3>100 PCS</h3>
+                    <h3>100 Unidades</h3>
                     <div class="price">US$9.99</div>
                     <div class="price-per-unit">US$0.10 / unidad</div>
                 </div>
@@ -250,7 +491,7 @@
                         <div class="size-box small-plus"></div>
                         <span class="size-label">7.5" × 10.5"</span>
                     </div>
-                    <h3>1000 PCS</h3>
+                    <h3>1000 Unidades</h3>
                     <div class="price">US$46.99</div>
                     <div class="price-per-unit">US$0.05 / unidad</div>
                 </div>
@@ -260,7 +501,7 @@
                         <div class="size-box medium"></div>
                         <span class="size-label">9" × 12"</span>
                     </div>
-                    <h3>100 PCS</h3>
+                    <h3>100 Unidades</h3>
                     <div class="price">US$15.95</div>
                     <div class="price-per-unit">US$0.16 / unidad</div>
                 </div>
@@ -271,7 +512,7 @@
                         <div class="size-box medium"></div>
                         <span class="size-label">9" × 12"</span>
                     </div>
-                    <h3>1000 PCS</h3>
+                    <h3>1000 Unidades</h3>
                     <div class="price">US$59.95</div>
                     <div class="price-per-unit">US$0.06 / unidad</div>
                 </div>
@@ -281,7 +522,7 @@
                         <div class="size-box large"></div>
                         <span class="size-label">10" × 13"</span>
                     </div>
-                    <h3>100 PCS</h3>
+                    <h3>100 Unidades</h3>
                     <div class="price">US$8.99</div>
                     <div class="price-per-unit">US$0.09 / unidad</div>
                     <div class="original-price">US$9.99</div>
@@ -292,7 +533,7 @@
                         <div class="size-box large"></div>
                         <span class="size-label">10" × 13"</span>
                     </div>
-                    <h3>500 PCS</h3>
+                    <h3>500 Unidades</h3>
                     <div class="price">US$38.95</div>
                     <div class="price-per-unit">US$0.08 / unidad</div>
                 </div>
@@ -302,7 +543,7 @@
                         <div class="size-box large"></div>
                         <span class="size-label">10" × 13"</span>
                     </div>
-                    <h3>1000 PCS</h3>
+                    <h3>1000 Unidades</h3>
                     <div class="price-from">1 opción desde</div>
                     <div class="price">US$59.99</div>
                 </div>
@@ -312,7 +553,7 @@
                         <div class="size-box large"></div>
                         <span class="size-label">10" × 13"</span>
                     </div>
-                    <h3>2000 PCS</h3>
+                    <h3>2000 Unidades</h3>
                     <div class="price-from">1 opción desde</div>
                     <div class="price">US$110.99</div>
                 </div>
@@ -323,7 +564,7 @@
                         <div class="size-box xlarge"></div>
                         <span class="size-label">12" × 15.5"</span>
                     </div>
-                    <h3>100 PCS</h3>
+                    <h3>100 Unidades</h3>
                     <div class="price">US$16.90</div>
                     <div class="price-per-unit">US$0.17 / unidad</div>
                 </div>
@@ -334,7 +575,7 @@
                         <div class="size-box xlarge"></div>
                         <span class="size-label">12" × 15.5"</span>
                     </div>
-                    <h3>500 PCS</h3>
+                    <h3>500 Unidades</h3>
                     <div class="price">US$46.99</div>
                     <div class="price-per-unit">US$0.09 / unidad</div>
                 </div>
@@ -344,7 +585,7 @@
                         <div class="size-box xlarge"></div>
                         <span class="size-label">12" × 15.5"</span>
                     </div>
-                    <h3>1000 PCS</h3>
+                    <h3>1000 Unidades</h3>
                     <div class="price-from">1 opción desde</div>
                     <div class="price">US$89.99</div>
                 </div>
@@ -354,7 +595,7 @@
                         <div class="size-box extra-large"></div>
                         <span class="size-label">14.5" × 19"</span>
                     </div>
-                    <h3>100 PCS</h3>
+                    <h3>100 Unidades</h3>
                     <div class="price">US$19.99</div>
                     <div class="price-per-unit">US$0.20 / unidad</div>
                 </div>
@@ -364,7 +605,7 @@
                         <div class="size-box extra-large"></div>
                         <span class="size-label">14.5" × 19"</span>
                     </div>
-                    <h3>400 PCS</h3>
+                    <h3>400 Unidades</h3>
                     <div class="price">US$69.99</div>
                     <div class="price-per-unit">US$0.17 / unidad</div>
                 </div>
@@ -375,7 +616,7 @@
                         <div class="size-box extra-large"></div>
                         <span class="size-label">14.5" × 19"</span>
                     </div>
-                    <h3>1000 PCS</h3>
+                    <h3>1000 Unidades</h3>
                     <div class="price-from">1 opción desde</div>
                     <div class="price">US$149.99</div>
                 </div>
@@ -385,7 +626,7 @@
                         <div class="size-box jumbo"></div>
                         <span class="size-label">19" × 24"</span>
                     </div>
-                    <h3>50 PCS</h3>
+                    <h3>50 Unidades</h3>
                     <div class="price">US$19.98</div>
                     <div class="price-per-unit">US$0.40 / unidad</div>
                 </div>
@@ -395,7 +636,7 @@
                         <div class="size-box jumbo"></div>
                         <span class="size-label">19" × 24"</span>
                     </div>
-                    <h3>100 PCS</h3>
+                    <h3>100 Unidades</h3>
                     <div class="price">US$35.95</div>
                     <div class="price-per-unit">US$0.36 / unidad</div>
                 </div>
@@ -405,7 +646,7 @@
                         <div class="size-box jumbo"></div>
                         <span class="size-label">19" × 24"</span>
                     </div>
-                    <h3>200 PCS</h3>
+                    <h3>200 Unidades</h3>
                     <div class="price">US$68.90</div>
                     <div class="price-per-unit">US$0.34 / unidad</div>
                 </div>
@@ -415,7 +656,7 @@
                         <div class="size-box jumbo"></div>
                         <span class="size-label">19" × 24"</span>
                     </div>
-                    <h3>400 PCS</h3>
+                    <h3>400 Unidades</h3>
                     <div class="price-from">1 opción desde</div>
                     <div class="price">US$99.99</div>
                 </div>
@@ -646,5 +887,6 @@
 
     <!-- JavaScript -->
     <script src="assets/js/proland-script.js"></script>
+    <script src="assets/js/pricing-filters.js"></script>
 </body>
 </html>
