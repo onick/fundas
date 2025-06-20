@@ -164,12 +164,15 @@ function initContactForm() {
             // Simulate form submission
             setTimeout(function() {
                 // Create WhatsApp message
-                const whatsappMessage = 'Hola! Solicito una muestra gratis de Empácame.\\n\\n' +
-                    'Nombre: ' + name + '\\n' +
-                    'Email: ' + email + '\\n' +
-                    'Teléfono: ' + phone;
+                const whatsappMessage = 'Hola! Solicito una muestra gratis de Empácame.\n\n' +
+                    'Datos:\n' +
+                    '• Nombre: ' + name + '\n' +
+                    '• Email: ' + email + '\n' +
+                    '• Teléfono: ' + phone + '\n' +
+                    '• Tipo de negocio: ' + businessType + '\n' +
+                    '• Mensaje: ' + (message || 'N/A') + '\n\n' +
+                    '¡Gracias!';
                 
-                // WhatsApp URL
                 const whatsappURL = 'https://wa.me/18494496394?text=' + encodeURIComponent(whatsappMessage);
                 
                 // Reset form

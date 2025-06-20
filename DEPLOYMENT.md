@@ -276,7 +276,7 @@ Para envío directo desde JavaScript sin backend.
 
 Para problemas específicos del deployment:
 - Email: soporte@empacame.com
-- WhatsApp: +1 (849) 449-6394
+- WhatsApp: +1 (809) 123-4567
 - Documentación: Ver README.md
 
 ---

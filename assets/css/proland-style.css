@@ -1719,7 +1719,7 @@ body {
 /* Sobrescribir estilos de pricing para diseño compacto */
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: var(--space-md);
     margin-bottom: var(--space-4xl);
     max-width: 1200px;
@@ -1939,14 +1939,14 @@ body {
 /* Responsive para el diseño compacto */
 @media (max-width: 1200px) {
     .pricing-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+        grid-template-columns: repeat(5, 1fr) !important;
         gap: var(--space-sm) !important;
     }
 }
 
 @media (max-width: 768px) {
     .pricing-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-columns: repeat(4, 1fr) !important;
         gap: var(--space-sm) !important;
     }
     

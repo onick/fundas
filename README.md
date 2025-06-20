@@ -43,8 +43,6 @@ empacame/
 - **JavaScript ES6+** - Interactividad y animaciones
 - **Font Awesome** - Iconografía
 - **Google Fonts** - Tipografía (Inter)
-- **Email**: [ventas@empacame.com](mailto:ventas@empacame.com)
-- **WhatsApp**: +1 (849) 449-6394
 
 ## 📱 Características Técnicas
 
