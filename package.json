@@ -4,13 +4,14 @@
   "description": "Landing page moderna y profesional para Empácame - Bolsas de envío duraderas e impermeables",
   "main": "index.html",
   "scripts": {
-    "start": "python -m http.server 8000",
+    "start": "npx live-server --port=3000",
     "serve": "npx http-server -p 8000 -o",
     "build": "echo 'No build process needed for static site'",
     "deploy": "echo 'Configure your deployment process here'",
     "lint:css": "echo 'CSS linting would go here'",
     "lint:js": "echo 'JS linting would go here'",
-    "optimize": "echo 'Image optimization and minification would go here'"
+    "optimize": "echo 'Image optimization and minification would go here'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "landing-page",
@@ -54,13 +55,13 @@
       "facebook_pixel": "FB_PIXEL_ID"
     },
     "contact": {
-      "whatsapp": "+18091234567",
-      "email": "info@empacame.com",
+      "whatsapp": "+18494496394",
+      "email": "ventas@empacame.com",
       "phone": "+1 (809) 123-4567"
     },
     "social": {
-      "instagram": "@empacame",
-      "facebook": "EmpacameRD",
+      "instagram": "https://www.instagram.com/empacame.do",
+      "facebook": "https://www.facebook.com/empacame",
       "twitter": "@empacame"
     }
   },
