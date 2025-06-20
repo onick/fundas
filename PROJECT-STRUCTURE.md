@@ -220,4 +220,4 @@ empacame/
 
 **¡Tu landing page profesional está lista! 🎉**
 
-**Para soporte**: info@empacame.com | WhatsApp: +1 (809) 123-4567
+**Para soporte**: info@empacame.com | WhatsApp: 849-449-6394

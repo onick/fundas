@@ -90,7 +90,7 @@ La página incluye integración directa con WhatsApp para:
 - Botón flotante de contacto
 - Enlaces de compra directa
 
-**Número configurado**: +1 (809) 123-4567
+**Número configurado**: 849-449-6394
 *Recuerda actualizar este número con el real de tu empresa*
 
 ## 🎯 Conversión Optimizada
@@ -159,7 +159,7 @@ Edita las variables CSS en `style.css`:
 
 Para soporte técnico o consultas sobre la implementación:
 - Email: desarrollo@empacame.com
-- WhatsApp: +1 (809) 123-4567
+- WhatsApp: 849-449-6394
 
 ## 📄 Licencia
 

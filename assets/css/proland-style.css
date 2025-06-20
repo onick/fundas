@@ -1941,7 +1941,10 @@ body {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
     gap: var(--space-lg) !important;
-    margin-top: var(--space-2xl) !important;
+    margin: var(--space-2xl) auto 0 auto !important;
+    max-width: 1200px !important;
+    padding: 0 var(--space-lg) !important;
+    justify-items: center !important;
 }
 
 .info-card {
@@ -1951,6 +1954,12 @@ body {
     text-align: center;
     border: 1px solid var(--gray-200) !important;
     transition: all var(--transition-normal);
+    width: 100% !important;
+    max-width: 350px !important;
+    min-height: 180px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
 }
 
 .info-card:hover {
@@ -1978,6 +1987,45 @@ body {
 }
 
 /* Responsive para el diseño compacto */
+
+/* Responsive específico para tarjetas informativas */
+@media (max-width: 768px) {
+    .pricing-info {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-md) !important;
+        max-width: 500px !important;
+        padding: 0 var(--space-md) !important;
+    }
+    
+    .info-card {
+        max-width: 100% !important;
+        min-height: auto !important;
+        padding: var(--space-md) !important;
+    }
+    
+    .info-card h3 {
+        font-size: 1.1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-info {
+        gap: var(--space-sm) !important;
+        padding: 0 var(--space-sm) !important;
+    }
+    
+    .info-card {
+        padding: var(--space-sm) var(--space-md) !important;
+    }
+    
+    .info-card h3 {
+        font-size: 1rem !important;
+    }
+    
+    .info-card p {
+        font-size: 0.85rem !important;
+    }
+}
 @media (max-width: 1200px) {
     .pricing-grid {
         grid-template-columns: repeat(5, 1fr) !important;
