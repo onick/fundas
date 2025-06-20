@@ -643,10 +643,13 @@ body {
 
     .hero-title {
         font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: var(--space-md);
     }
 
     .hero-subtitle {
         font-size: 1.125rem;
+        line-height: 1.5;
     }
 
     .hero-stats {
@@ -664,6 +667,31 @@ body {
     .bag-container {
         width: 250px;
         height: 320px;
+    }
+}
+
+/* Móviles pequeños - Corregir texto cortado */
+@media (max-width: 480px) {
+    .hero {
+        padding: var(--space-2xl) 0 var(--space-xl);
+    }
+    
+    .hero-title {
+        font-size: 2rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: var(--space-sm) !important;
+        padding: 0 var(--space-sm) !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        padding: 0 var(--space-md) !important;
+        margin-bottom: var(--space-lg) !important;
+    }
+    
+    .container {
+        padding: 0 var(--space-sm) !important;
     }
 }
 
