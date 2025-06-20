@@ -5,12 +5,17 @@ empacame/
 ├── 📄 index.html                    # Página principal (HTML completo)
 ├── 📁 assets/                       # Recursos del proyecto
 │   ├── 📁 css/
-│   │   └── 📄 style.css            # Estilos principales (CSS moderno)
+│   │   ├── 📄 proland-style.css    # Estilos principales (CSS moderno)
+│   │   ├── 📄 new-pricing-styles.css # 🆕 Estilos nueva sección precios
+│   │   ├── 📄 style.css            # Estilos originales (legacy)
+│   │   └── 📄 improvements.css     # Mejoras adicionales
 │   ├── 📁 js/
-│   │   └── 📄 main.js              # JavaScript funcional
+│   │   ├── 📄 proland-script.js    # JavaScript principal
+│   │   └── 📄 pricing-filters.js   # 🆕 Filtros de precios dinámicos
 │   └── 📁 images/                  # Carpeta para imágenes
 │       └── 📝 (agregar imágenes aquí)
 ├── 📄 README.md                     # Documentación principal
+├── 📄 PROJECT-STRUCTURE.md          # Este archivo (estructura del proyecto)
 ├── 📄 DEPLOYMENT.md                 # Guía de publicación
 ├── 📄 package.json                  # Configuración del proyecto
 ├── 📄 .gitignore                    # Archivos ignorados por Git
@@ -19,35 +24,48 @@ empacame/
 └── 📄 server-config.txt             # Configuraciones de servidor
 ```
 
-## ✅ ARCHIVOS CREADOS
+## ✅ ARCHIVOS CREADOS/ACTUALIZADOS
 
 ### 🌐 Página Principal
-- **index.html** (435+ líneas)
+- **index.html** (650+ líneas) ⬆️ ACTUALIZADO
   - Hero section con animaciones
   - Sección de beneficios
-  - Especificaciones del producto
+  - 🆕 **Nueva sección de precios organizada por tamaños**
   - Testimonios de clientes
   - FAQ interactivas
   - Formulario de contacto
   - CTA optimizado para conversión
 
 ### 🎨 Estilos (CSS)
-- **style.css** (1,200+ líneas)
+- **proland-style.css** (2,000+ líneas)
   - Variables CSS personalizadas
   - Diseño responsivo (Mobile First)
   - Animaciones suaves
   - Hover effects
-  - Dark mode compatible
-  - Print styles
   - Accesibilidad optimizada
 
+- **🆕 new-pricing-styles.css** (330+ líneas) 
+  - Estilos para nueva estructura de precios
+  - Filtros interactivos
+  - Grupos de tamaños organizados
+  - Badges y etiquetas inteligentes
+  - Animaciones de scroll
+  - Responsive optimizado
+
 ### ⚡ JavaScript
-- **main.js** (476+ líneas)
+- **proland-script.js** (476+ líneas)
   - Navegación móvil
   - Animaciones al scroll
   - FAQ interactivas
   - Formulario funcional
   - Integración WhatsApp
+
+- **🆕 pricing-filters.js** (127+ líneas)
+  - Filtros dinámicos por categorías
+  - Animaciones de transición
+  - WhatsApp tracking mejorado
+  - Intersection Observer para animaciones
+  - Smooth scrolling
   - Efectos parallax
   - Sistema de notificaciones
   - Analytics tracking ready
@@ -98,11 +116,21 @@ empacame/
 - Iconografía Font Awesome
 - Colores brand consistentes
 
+### 🆕 NUEVA SECCIÓN DE PRECIOS (v2.0)
+- **Organización por tamaños**: Grupos lógicos ascendentes
+- **Filtros interactivos**: Pequeños, Medianos, Grandes
+- **Badges inteligentes**: Mejor Valor, Más Popular, Oferta
+- **WhatsApp específico**: Mensajes predeterminados por producto
+- **Visualización de ahorros**: Porcentajes claros de descuento
+- **Responsive mejorado**: Experiencia móvil optimizada
+- **Animaciones suaves**: Efectos de hover y scroll
+
 ### 📱 Totalmente Responsivo
 - Mobile First approach
 - Breakpoints optimizados
 - Touch-friendly interfaces
 - Navegación móvil hamburger
+- Nueva grilla flexible para precios
 
 ### ⚡ Performance Optimizada
 - CSS Grid y Flexbox
