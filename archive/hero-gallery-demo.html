@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Hero Gallery Empácame</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #10b981;
+            --accent-color: #f59e0b;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 0.75rem;
+            --space-lg: 1rem;
+            --space-xl: 1.5rem;
+            --space-2xl: 2rem;
+            --space-3xl: 3rem;
+            --space-4xl: 4rem;
+            --space-6xl: 6rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background: var(--gray-50);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* Demo Navigation */
+        .demo-nav {
+            background: white;
+            padding: var(--space-lg) 0;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .demo-nav h1 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+            padding: var(--space-6xl) 0;
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4xl);
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--gray-900);
+            line-height: 1.1;
+            margin-bottom: var(--space-xl);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: var(--space-2xl);
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-3xl);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-lg) var(--space-2xl);
+            border-radius: var(--radius-xl);
+            font-weight: var(--font-weight-semibold);
+            text-decoration: none;
+            transition: var(--transition-normal);
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: var(--space-2xl);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            font-weight: var(--font-weight-medium);
+            margin-top: var(--space-xs);
+        }
+
+        /* Nueva Galería de Productos */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-gallery {
+            position: relative;
+            width: 380px;
+            height: 480px;
+            perspective: 1200px;
+        }
+
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+
+        .product-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: translateX(100px) rotateY(45deg) scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-2xl);
+            overflow: hidden;
+            border: 3px solid transparent;
+        }
+
+        .product-slide.active {
+            opacity: 1;
+            transform: translateX(0) rotateY(0deg) scale(1);
+            z-index: 10;
+            border-color: var(--primary-color);
+        }
+
+        .product-slide.prev {
+            opacity: 0.4;
+            transform: translateX(-80px) rotateY(-25deg) scale(0.85);
+            z-index: 5;
+        }
+
+        .product-slide.next {
+            opacity: 0.4;
+            transform: translateX(80px) rotateY(25deg) scale(0.85);
+            z-index: 5;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 75%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-slide:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+            color: white;
+            padding: var(--space-xl) var(--space-lg) var(--space-lg);
+            transform: translateY(50%);
+            transition: transform 0.4s ease;
+        }
+
+        .product-slide.active .product-info {
+            transform: translateY(0);
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-xs);
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        /* Indicadores de navegación */
+        .gallery-indicators {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: var(--space-md);
+            z-index: 20;
+        }
+
+        .indicator {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--gray-300);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            border: 2px solid transparent;
+        }
+
+        .indicator.active {
+            background: var(--primary-color);
+            transform: scale(1.3);
+            border-color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .indicator:hover {
+            background: var(--primary-color);
+            opacity: 0.7;
+        }
+
+        /* Badges flotantes mejorados */
+        .feature-badges {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .badge {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-xl);
+            font-size: 0.875rem;
+            font-weight: var(--font-weight-semibold);
+            animation: floatBadge 4s ease-in-out infinite;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            z-index: 15;
+        }
+
+        .badge i {
+            color: var(--primary-color);
+        }
+
+        .badge:nth-child(1) {
+            top: 15%;
+            right: -50px;
+            animation-delay: 0s;
+        }
+
+        .badge:nth-child(2) {
+            left: -60px;
+            top: 50%;
+            animation-delay: 1.5s;
+        }
+
+        .badge:nth-child(3) {
+            bottom: 25%;
+            right: -40px;
+            animation-delay: 3s;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-15px) scale(1.05);
+            }
+        }
+
+        /* Controles de navegación */
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-lg);
+            z-index: 20;
+        }
+
+        .gallery-nav:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .gallery-nav.prev {
+            left: -25px;
+        }
+
+        .gallery-nav.next {
+            right: -25px;
+        }
+
+        /* Auto-play indicator */
+        .autoplay-indicator {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        .play-icon {
+            animation: pulse 2s ease-in-out infinite;
+            color: var(--secondary-color);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: var(--space-3xl);
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .product-gallery {
+                width: 320px;
+                height: 400px;
+            }
+
+            .badge {
+                font-size: 0.75rem;
+                padding: var(--space-xs) var(--space-sm);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="demo-nav">
+        <div class="container">
+            <h1>🚀 DEMO: Nueva Galería Hero - Empácame</h1>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="content-side">
+                    <h1 class="hero-title">
+                        Envía con <span class="highlight">Confianza</span><br>
+                        Protección Total para Tus Paquetes
+                    </h1>
+                    <p class="hero-subtitle">
+                        Bolsas de envío duraderas, impermeables y con sello de seguridad. 
+                        Transforma la experiencia de tus clientes con un empaque profesional que protege y sorprende.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#especificaciones" class="btn btn-primary">
+                            <i class="fas fa-shopping-cart"></i>
+                            Ver Todos los Precios
+                        </a>
+                        <a href="#muestra" class="btn btn-secondary">
+                            <i class="fas fa-gift"></i>
+                            Solicitar Muestra Gratis
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">11</div>
+                            <div class="stat-label">Tamaños disponibles</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Impermeables</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Resistencia</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="product-gallery">
+                        <div class="autoplay-indicator">
+                            <i class="fas fa-play play-icon"></i>
+                            <span>Auto-rotación</span>
+                        </div>
+                        
+                        <button class="gallery-nav prev" onclick="previousSlide()">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <button class="gallery-nav next" onclick="nextSlide()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        
+                        <div class="gallery-container">
+                            <div class="product-slide active">
+                                <img src="img/bolsas-para-mensajeria-20x30cm-tipo-ecommerce-.webp" alt="Bolsas de mensajería" class="product-image">
+                                <div class="product-info">
+                                    <div class="product-title">Bolsas E-commerce</div>
+                                    <div class="product-description">Perfectas para tiendas online. Tamaño 20x30cm, ideales para ropa y accesorios.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-slide">
+                                <img src="img/bolsas-de-seguridad-12x20cm-con-portaguia-.webp" alt="Bolsas de seguridad" class="product-image">
+                                <div class="product-info">
+                                    <div class="product-title">Bolsas de Seguridad</div>
+                                    <div class="product-description">Con portaguía integrado. Máxima seguridad para envíos importantes.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-slide">
+                                <img src="img/bolsas-de-seguridad-grandes-con-porta-guia-para-envios-100und-47x60cm-.webp" alt="Bolsas grandes" class="product-image">
+                                <div class="product-info">
+                                    <div class="product-title">Bolsas Grandes</div>
+                                    <div class="product-description">Tamaño 47x60cm. Para envíos voluminosos y múltiples productos.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-slide">
+                                <img src="img/bolsas-de-seguridad-mensajeria-personalizables-30x40cm.webp" alt="Bolsas personalizables" class="product-image">
+                                <div class="product-info">
+                                    <div class="product-title">Bolsas Personalizables</div>
+                                    <div class="product-description">30x40cm con opciones de personalización para tu marca.</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-indicators">
+                            <div class="indicator active" onclick="goToSlide(0)"></div>
+                            <div class="indicator" onclick="goToSlide(1)"></div>
+                            <div class="indicator" onclick="goToSlide(2)"></div>
+                            <div class="indicator" onclick="goToSlide(3)"></div>
+                        </div>
+                        
+                        <div class="feature-badges">
+                            <div class="badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Resistente</span>
+                            </div>
+                            <div class="badge">
+                                <i class="fas fa-tint"></i>
+                                <span>Impermeable</span>
+                            </div>
+                            <div class="badge">
+                                <i class="fas fa-lock"></i>
+                                <span>Sello de Seguridad</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.product-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+        let autoplayInterval;
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'prev', 'next');
+                
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
+                    slide.classList.add('prev');
+                } else if (index === (currentSlide + 1) % totalSlides) {
+                    slide.classList.add('next');
+                }
+            });
+            
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlides();
+            resetAutoplay();
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlides();
+            resetAutoplay();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlides();
+            resetAutoplay();
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(nextSlide, 4000);
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+
+        // Inicializar
+        updateSlides();
+        startAutoplay();
+
+        // Pausar autoplay al hacer hover
+        const gallery = document.querySelector('.product-gallery');
+        gallery.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+        gallery.addEventListener('mouseleave', startAutoplay);
+
+        // Soporte para navegación con teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') previousSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+    </script>
+</body>
+</html>

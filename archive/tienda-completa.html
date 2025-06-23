@@ -1,0 +1,188 @@
+                
+                cartButton.innerHTML = `
+                    <button class="add-to-cart-btn" onclick="empacameCart.addToCartWithFeedback('${productInfo.sizeKey}', ${productInfo.quantity}, this)">
+                        <i class="fas fa-cart-plus"></i>
+                        Agregar al Carrito
+                    </button>
+                    <div class="button-options">
+                        <button class="btn-whatsapp-alt" onclick="empacameCart.openWhatsAppFallback(this)" title="Pedir por WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </button>
+                    </div>
+                `;
+                
+                return cartButton;
+            }
+
+            addWhatsAppOption(cartButton, originalButton) {
+                const whatsappAlt = cartButton.querySelector('.btn-whatsapp-alt');
+                whatsappAlt.onclick = () => {
+                    originalButton.click();
+                };
+            }
+
+            // Función para agregar al carrito con feedback visual
+            addToCartWithFeedback(sizeKey, quantity, buttonElement) {
+                buttonElement.classList.add('loading');
+                buttonElement.disabled = true;
+                
+                setTimeout(() => {
+                    const success = this.addToCart(sizeKey, quantity);
+                    
+                    if (success) {
+                        this.showSuccessFeedback(buttonElement);
+                        
+                        const cartButton = document.getElementById('cartButton');
+                        if (cartButton) {
+                            cartButton.classList.add('pulse');
+                            setTimeout(() => cartButton.classList.remove('pulse'), 1500);
+                        }
+                    } else {
+                        this.showErrorFeedback(buttonElement);
+                    }
+                    
+                    buttonElement.classList.remove('loading');
+                    buttonElement.disabled = false;
+                }, 500);
+            }
+
+            showSuccessFeedback(buttonElement) {
+                const originalContent = buttonElement.innerHTML;
+                
+                buttonElement.innerHTML = `
+                    <i class="fas fa-check" style="color: #10b981;"></i>
+                    ¡Agregado!
+                `;
+                buttonElement.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                
+                setTimeout(() => {
+                    buttonElement.innerHTML = originalContent;
+                    buttonElement.style.background = '';
+                }, 2000);
+            }
+
+            showErrorFeedback(buttonElement) {
+                const originalContent = buttonElement.innerHTML;
+                
+                buttonElement.innerHTML = `
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Error
+                `;
+                buttonElement.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+                
+                setTimeout(() => {
+                    buttonElement.innerHTML = originalContent;
+                    buttonElement.style.background = '';
+                }, 2000);
+            }
+
+            openWhatsAppFallback(buttonElement) {
+                const container = buttonElement.closest('.cart-button-container');
+                const originalButton = container.nextElementSibling;
+                
+                if (originalButton && originalButton.href) {
+                    window.open(originalButton.href, '_blank');
+                }
+            }
+
+            // Guardar carrito en localStorage
+            saveCart() {
+                localStorage.setItem('empacame_cart', JSON.stringify(this.items));
+            }
+
+            // Cargar carrito desde localStorage
+            loadCart() {
+                const saved = localStorage.getItem('empacame_cart');
+                return saved ? JSON.parse(saved) : [];
+            }
+
+            // Limpiar carrito
+            clearCart() {
+                this.items = [];
+                this.saveCart();
+                this.updateCartDisplay();
+            }
+        }
+
+        // Configurar filtros de productos
+        function setupFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const sizeGroups = document.querySelectorAll('.size-group');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remover active de todos los botones
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Agregar active al botón clickeado
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    
+                    sizeGroups.forEach(group => {
+                        if (filter === 'all' || group.getAttribute('data-category') === filter) {
+                            group.style.display = 'block';
+                        } else {
+                            group.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Función para demo/testing
+        function testAddToCart() {
+            if (typeof empacameCart !== 'undefined') {
+                empacameCart.addToCart('12x15.5', 500);
+                console.log('🧪 Producto de prueba agregado al carrito');
+            }
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🛒 Empácame E-commerce iniciado');
+            
+            // Inicializar carrito
+            window.empacameCart = new EmpacameCart();
+            
+            // Configurar filtros
+            setupFilters();
+            
+            // Configurar smooth scroll para navegación
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Exponer funciones globales para los botones
+            window.addToCartWithFeedback = (sizeKey, quantity, buttonElement) => {
+                empacameCart.addToCartWithFeedback(sizeKey, quantity, buttonElement);
+            };
+
+            window.openWhatsAppFallback = (buttonElement) => {
+                empacameCart.openWhatsAppFallback(buttonElement);
+            };
+            
+            // Verificar funcionamiento
+            if (typeof empacameCart !== 'undefined') {
+                console.log('✅ Sistema de carrito cargado correctamente');
+            } else {
+                console.error('❌ Error: Sistema de carrito no disponible');
+            }
+        });
+
+        // Shortcut para desarrolladores
+        if (window.location.hostname === 'localhost' || window.location.hostname.includes('127.0.0.1')) {
+            window.testCart = testAddToCart;
+            console.log('🔧 Modo desarrollo: usa testCart() para probar');
+        }
+    </script>
+</body>
+</html>

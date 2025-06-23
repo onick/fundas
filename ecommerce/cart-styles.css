@@ -1,0 +1,369 @@
+/**
+ * EMPÁCAME E-COMMERCE STYLES (CONTINUACIÓN)
+ * Estilos del sistema de carrito integrado
+ */
+
+/* Cart Notification (continuación) */
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--cart-success), var(--cart-secondary));
+    color: var(--cart-white);
+    padding: 16px 20px;
+    border-radius: var(--cart-border-radius);
+    box-shadow: var(--cart-shadow-lg);
+    z-index: calc(var(--cart-z-index) + 2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    transform: translateX(400px);
+    transition: var(--cart-transition);
+}
+
+.cart-notification.show {
+    transform: translateX(0);
+}
+
+.cart-notification i {
+    font-size: 1.25rem;
+}
+
+/* Body cuando el carrito está abierto */
+.cart-open {
+    overflow: hidden;
+}
+
+/* Integración con botones de compra existentes */
+.btn-price {
+    transition: var(--cart-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-price::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-price:hover::before {
+    left: 100%;
+}
+
+.btn-price:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--cart-shadow);
+}
+
+/* Estilos para botones "Agregar al Carrito" */
+.add-to-cart-btn {
+    background: linear-gradient(135deg, var(--cart-primary), var(--cart-secondary));
+    color: var(--cart-white);
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--cart-border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--cart-transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    font-size: 0.95rem;
+}
+
+.add-to-cart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--cart-shadow);
+}
+
+.add-to-cart-btn i {
+    font-size: 1rem;
+}
+
+/* Indicador de loading */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cart-sidebar {
+        width: 100%;
+        max-width: 100vw;
+    }
+    
+    .cart-button {
+        bottom: 15px;
+        right: 15px;
+        padding: 14px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .cart-button i {
+        font-size: 1.1rem;
+    }
+    
+    .cart-count {
+        width: 22px;
+        height: 22px;
+        font-size: 0.8rem;
+    }
+    
+    .cart-total {
+        font-size: 1rem;
+    }
+    
+    .cart-header {
+        padding: 20px;
+    }
+    
+    .cart-header h3 {
+        font-size: 1.25rem;
+    }
+    
+    .cart-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+    
+    .item-price {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .cart-actions {
+        padding: 20px;
+    }
+    
+    .btn-checkout, .btn-whatsapp {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-button {
+        padding: 12px 16px;
+        gap: 10px;
+    }
+    
+    .cart-notification {
+        top: 15px;
+        right: 15px;
+        left: 15px;
+        padding: 14px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .cart-header {
+        padding: 16px;
+    }
+    
+    .cart-item {
+        padding: 14px 16px;
+    }
+    
+    .cart-summary {
+        padding: 20px;
+    }
+    
+    .cart-actions {
+        padding: 16px;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cart-item {
+    animation: fadeInUp 0.3s ease;
+}
+
+/* Estados especiales */
+.cart-button.pulse {
+    animation: pulse-cart 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-cart {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Mejoras visuales */
+.cart-sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cart-sidebar::-webkit-scrollbar-track {
+    background: var(--cart-light);
+}
+
+.cart-sidebar::-webkit-scrollbar-thumb {
+    background: var(--cart-primary);
+    border-radius: 4px;
+}
+
+.cart-sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--cart-secondary);
+}
+
+/* Efectos hover mejorados */
+.cart-item:hover .remove-item {
+    opacity: 1;
+}
+
+.remove-item {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+/* Indicadores de estado */
+.cart-item.removing {
+    opacity: 0.5;
+    transform: translateX(-20px);
+}
+
+.cart-item.adding {
+    transform: scale(1.02);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+/* Estilos para cantidad personalizada */
+.custom-quantity-input {
+    width: 80px;
+    padding: 8px;
+    border: 2px solid var(--cart-light);
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--cart-dark);
+    transition: var(--cart-transition);
+}
+
+.custom-quantity-input:focus {
+    outline: none;
+    border-color: var(--cart-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Efectos de éxito */
+.success-checkmark {
+    color: var(--cart-success);
+    animation: checkmark-appear 0.5s ease;
+}
+
+@keyframes checkmark-appear {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Integración con el diseño existente */
+.hero .btn-primary,
+.hero .btn-secondary {
+    position: relative;
+    z-index: 1;
+}
+
+/* Asegurar que el carrito no interfiera con otros elementos */
+.whatsapp-float {
+    z-index: calc(var(--cart-z-index) - 1);
+}
+
+/* Estilos de compatibilidad */
+.cart-sidebar * {
+    box-sizing: border-box;
+}
+
+.cart-sidebar a {
+    text-decoration: none;
+}
+
+.cart-sidebar button {
+    font-family: inherit;
+}
+
+/* Preloader para imágenes de productos (futuro uso) */
+.product-image-placeholder {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--cart-light), #e5e7eb);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 1.5rem;
+}
+
+/* Dark mode support (preparación futura) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cart-white: #1f2937;
+        --cart-light: #374151;
+        --cart-dark: #f9fafb;
+    }
+}

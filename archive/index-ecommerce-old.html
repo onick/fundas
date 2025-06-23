@@ -1,0 +1,130 @@
+ online de bolsas de envío profesionales</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/empacame"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/18494496394?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20tienda%20online%20de%20Emp%C3%A1came" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:info@empacame.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>849-449-6394</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@empacame.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Santo Domingo, República Dominicana</span>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <h4>Tienda Online</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Carrito de compras</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Múltiples formas de pago</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-truck"></i>
+                        <span>Envío gratis sobre $50</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Empácame - Tienda Online. Todos los derechos reservados. E-commerce profesional para emprendedores dominicanos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/18494496394?text=Hola,%20necesito%20ayuda%20con%20la%20tienda%20online%20de%20Emp%C3%A1came.%20%C2%BFPodr%C3%ADan%20asistirme?" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript Existente -->
+    <script src="assets/js/proland-script.js"></script>
+    <script src="assets/js/pricing-filters.js"></script>
+    <script src="assets/js/scroll-animations.js"></script>
+    
+    <!-- JavaScript del Sistema de Carrito -->
+    <script src="ecommerce/cart-system.js"></script>
+    <script src="ecommerce/cart-integration.js"></script>
+    
+    <!-- Inicialización del E-commerce -->
+    <script>
+        // Configuración específica para Empácame
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🛒 Empácame E-commerce iniciado');
+            
+            // Verificar que el carrito esté funcionando
+            if (typeof empacameCart !== 'undefined') {
+                console.log('✅ Sistema de carrito cargado correctamente');
+                
+                // Configurar eventos analytics (preparado para el futuro)
+                empacameCart.onCartUpdate = function(items) {
+                    console.log('📊 Carrito actualizado:', items.length, 'productos');
+                };
+                
+                // Configurar notificaciones
+                empacameCart.onProductAdded = function(product) {
+                    console.log('🎉 Producto agregado:', product.productName);
+                };
+            } else {
+                console.error('❌ Error: Sistema de carrito no disponible');
+            }
+        });
+        
+        // Función para demos y testing
+        function testAddToCart() {
+            if (typeof empacameCart !== 'undefined') {
+                empacameCart.addToCart('12x15.5', 500);
+                console.log('🧪 Producto de prueba agregado al carrito');
+            }
+        }
+        
+        // Shortcut para desarrolladores (solo en desarrollo)
+        if (window.location.hostname === 'localhost' || window.location.hostname.includes('127.0.0.1')) {
+            window.testCart = testAddToCart;
+            console.log('🔧 Modo desarrollo: usa testCart() para probar');
+        }
+    </script>
+    
+    <!-- Schema.org para productos específicos -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Bolsas de Envío Empácame",
+        "description": "Bolsas de envío profesionales, impermeables y con sello de seguridad. Múltiples tamaños disponibles.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Empácame"
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "8.99",
+            "highPrice": "149.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "Empácame"
+            }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "3"
+        }
+    }
+    </script>
+</body>
+</html>

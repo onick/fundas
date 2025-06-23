@@ -3,840 +3,948 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empácame - Bolsas de Envío Profesionales</title>
-    <meta name="description" content="Bolsas de envío duraderas, impermeables y con sello de seguridad. Protección total para tus paquetes con presentación profesional.">
+    <title>Empácame - Bolsas de Envío Profesionales | República Dominicana</title>
+    <meta name="description" content="Bolsas de envío impermeables con sello de seguridad. Envío disponible a toda República Dominicana por $5.99. Para emprendedores y tiendas online.">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/proland-style.css">
-    <link rel="stylesheet" href="assets/css/new-pricing-styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+    
+    <!-- Cart System Styles -->
+    <link rel="stylesheet" href="assets/css/tailwind-cart.css">
+    
+    <!-- Payment System Styles -->
+    <link rel="stylesheet" href="assets/css/payments.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#fff8f1',
+                            100: '#ffecda',
+                            200: '#ffd6b5',
+                            300: '#ffb885',
+                            400: '#ff9554',
+                            500: '#FF8C00',
+                            600: '#e67300',
+                            700: '#cc5a00',
+                            800: '#b34700',
+                            900: '#1A2332',
+                        },
+                        accent: {
+                            50: '#e6f9ff',
+                            100: '#b3efff',
+                            200: '#80e5ff',
+                            300: '#4ddbff',
+                            400: '#1ad1ff',
+                            500: '#00A8CC',
+                            600: '#0097b8',
+                            700: '#0086a4',
+                            800: '#007590',
+                            900: '#00647c',
+                        },
+                        success: {
+                            50: '#e6f9f2',
+                            100: '#b3f0dc',
+                            200: '#80e7c7',
+                            300: '#4ddeb1',
+                            400: '#1ad59c',
+                            500: '#00B96B',
+                            600: '#00a860',
+                            700: '#009755',
+                            800: '#00864a',
+                            900: '#00753f',
+                        },
+                        warning: {
+                            50: '#fffdf0',
+                            100: '#fff9d9',
+                            200: '#fff4c2',
+                            300: '#ffefab',
+                            400: '#ffea94',
+                            500: '#FFB800',
+                            600: '#e6a600',
+                            700: '#cc9400',
+                            800: '#b38200',
+                            900: '#997000',
+                        },
+                        error: {
+                            50: '#fff0f2',
+                            100: '#ffd9de',
+                            200: '#ffb3bc',
+                            300: '#ff8c9a',
+                            400: '#ff6678',
+                            500: '#FF4757',
+                            600: '#e6404e',
+                            700: '#cc3945',
+                            800: '#b3323c',
+                            900: '#992b33',
+                        },
+                        neutral: {
+                            50: '#f8f9fa',
+                            100: '#e1e8ed',
+                            200: '#bdc6cf',
+                            300: '#99a4b1',
+                            400: '#7f8c8d',
+                            500: '#2C3E50',
+                            600: '#273849',
+                            700: '#223242',
+                            800: '#1d2c3b',
+                            900: '#182634',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s ease-in-out infinite',
+                        'bounce-slow': 'bounce 3s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            @apply bg-gray-100;
+        }
+        ::-webkit-scrollbar-thumb {
+            @apply bg-gray-400 rounded-full;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            @apply bg-gray-500;
+        }
+
+        /* Hero Background Gradient */
+        .hero-gradient {
+            background: linear-gradient(135deg, #FF8C00 0%, #1A2332 100%);
+        }
+        
+        /* Floating Animation */
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Product Card Hover Effects */
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Cart Button Styles */
+        .cart-button {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-button.has-items {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 450px;
+            height: 100vh;
+            background: white;
+            z-index: 1001;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+        
+        .cart-sidebar.open {
+            right: 0;
+        }
+        
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Notification */
+        .cart-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1002;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        .cart-notification.show {
+            transform: translateX(0);
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .cart-button {
+                bottom: 20px;
+                top: auto;
+                right: 20px;
+                transform: none;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
-<body>
+
+<body class="bg-gray-50 font-inter">
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <h2>📦 Empácame</h2>
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📦</span>
+                    <span class="text-xl font-bold text-gray-900">Empácame</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#productos" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Productos</a>
+                    <a href="#beneficios" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Beneficios</a>
+                    <a href="#testimonios" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Testimonios</a>
+                    <a href="#tienda" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors font-medium">
+                        Comprar Ahora
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
             </div>
-            <div class="nav-links">
-                <a href="#producto">Producto</a>
-                <a href="#beneficios">Beneficios</a>
-                <a href="#especificaciones">Especificaciones</a>
-                <a href="#testimonios">Testimonios</a>
-                <a href="#comprar" class="btn-nav">Comprar Ahora</a>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200 hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#productos" class="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors">Productos</a>
+                <a href="#beneficios" class="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors">Beneficios</a>
+                <a href="#testimonios" class="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors">Testimonios</a>
+                <a href="#tienda" class="block px-3 py-2 bg-primary-600 text-white rounded-lg mx-3 text-center">Comprar Ahora</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Envía con <span class="highlight">Confianza</span><br>
-                    Protección Total para Tus Paquetes
-                </h1>
-                <p class="hero-subtitle">
-                    Bolsas de envío duraderas, impermeables y con sello de seguridad. 
-                    Transforma la experiencia de tus clientes con un empaque profesional que protege y sorprende.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#especificaciones" class="btn btn-primary">
-                        <i class="fas fa-shopping-cart"></i>
-                        Ver Todos los Precios
-                    </a>
-                    <a href="#muestra" class="btn btn-secondary">
-                        <i class="fas fa-gift"></i>
-                        Solicitar Muestra Gratis
-                    </a>
+    <section class="relative pt-16 min-h-screen flex items-center hero-gradient overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow"></div>
+            <div class="absolute top-40 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow animation-delay-2000"></div>
+            <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow animation-delay-4000"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="text-white animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Envía con <span class="text-warning-500">Confianza</span>
+                        <br>
+                        <span class="text-3xl md:text-4xl lg:text-5xl">Protección Total</span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
+                        Bolsas de envío duraderas, impermeables y con sello de seguridad. 
+                        Transforma la experiencia de tus clientes con un empaque profesional.
+                    </p>
+                    
+                    <!-- Hero Stats -->
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-yellow-300">11</div>
+                            <div class="text-sm text-blue-100">Tamaños</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-yellow-300">100%</div>
+                            <div class="text-sm text-blue-100">Impermeables</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-yellow-300">100%</div>
+                            <div class="text-sm text-blue-100">Resistentes</div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#tienda" class="bg-warning-500 hover:bg-warning-600 text-neutral-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Ver Precios</span>
+                        </a>
+                        <a href="https://wa.me/18494496394?text=Hola,%20quiero%20una%20muestra%20gratis%20de%20Empácame" class="bg-white/20 hover:bg-white/30 text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:transform hover:scale-105 backdrop-blur-sm flex items-center justify-center space-x-2">
+                            <i class="fas fa-gift"></i>
+                            <span>Muestra Gratis</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">11</div>
-                        <div class="stat-label">Tamaños disponibles</div>
+                
+                <!-- Hero Visual -->
+                <div class="relative animate-slide-up">
+                    <div class="relative z-10">
+                        <!-- Main Product Image -->
+                        <div class="relative bg-white rounded-3xl p-8 shadow-2xl float-animation">
+                            <div class="w-full h-80 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                                <!-- Bag Illustration -->
+                                <div class="w-48 h-60 bg-gradient-to-b from-gray-300 to-gray-400 rounded-lg relative">
+                                    <!-- Seal Strip -->
+                                    <div class="absolute top-0 left-0 right-0 h-8 bg-red-500 rounded-t-lg"></div>
+                                    <!-- Handle -->
+                                    <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-gray-400 rounded-full"></div>
+                                    <!-- Brand Text -->
+                                    <div class="absolute bottom-8 left-4 right-4 text-center">
+                                        <div class="text-gray-600 font-bold text-sm">EMPÁCAME</div>
+                                        <div class="text-xs text-gray-500 mt-1">Resistente • Impermeable</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Water Drops Animation -->
+                                <div class="absolute top-4 right-4 text-blue-400 animate-bounce">
+                                    <i class="fas fa-tint text-xl"></i>
+                                </div>
+                                <div class="absolute bottom-8 left-4 text-blue-400 animate-bounce" style="animation-delay: 1s;">
+                                    <i class="fas fa-tint text-lg"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Feature Badges -->
+                            <div class="absolute -bottom-4 -left-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                                <i class="fas fa-shield-alt mr-1"></i>
+                                Resistente
+                            </div>
+                            <div class="absolute -top-4 -right-4 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                                <i class="fas fa-lock mr-1"></i>
+                                Sello Seguro
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Impermeables</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Resistencia</div>
-                    </div>
+                    
+                    <!-- Background Decoration -->
+                    <div class="absolute -top-8 -right-8 w-32 h-32 bg-yellow-300 rounded-full opacity-20 animate-pulse-slow"></div>
+                    <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-blue-300 rounded-full opacity-20 animate-pulse-slow" style="animation-delay: 2s;"></div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="product-showcase">
-                    <div class="product-main">
-                        <div class="shipping-bag">
-                            <div class="bag-seal"></div>
-                            <div class="bag-content">
-                                <div class="content-item"></div>
-                            </div>
-                            <div class="water-effects">
-                                <div class="water-drop"></div>
-                                <div class="water-drop"></div>
-                                <div class="water-drop"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="feature-badges">
-                        <div class="badge">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Resistente</span>
-                        </div>
-                        <div class="badge">
-                            <i class="fas fa-tint"></i>
-                            <span>Impermeable</span>
-                        </div>
-                        <div class="badge">
-                            <i class="fas fa-lock"></i>
-                            <span>Sello de Seguridad</span>
-                        </div>
-                    </div>
+        </div>
+    </section>
+"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Introduction -->
-    <section id="producto" class="product-intro">
-        <div class="container">
-            <div class="section-grid">
-                <div class="content-side">
-                    <h2 class="section-title">
-                        Revoluciona tu empaque. <span class="highlight">Eleva tu marca.</span>
-                    </h2>
-                    <p class="section-description">
-                        En el mundo del comercio online, la primera impresión cuenta. Nuestras bolsas de envío 
-                        no solo protegen tus productos, sino que crean una experiencia memorable desde el momento 
-                        en que tus clientes reciben su pedido.
-                    </p>
-                    <div class="feature-list">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Sello de seguridad sin necesidad de cinta</span>
+    <!-- Store Section -->
+    <section id="tienda" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Tamaños y <span class="text-primary-600">Precios</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Encuentra el tamaño perfecto para tu negocio con precios competitivos
+                </p>
+                
+                <!-- Shipping Notice -->
+                <div class="inline-flex items-center space-x-2 bg-accent-100 text-accent-800 px-6 py-3 rounded-full font-semibold">
+                    <i class="fas fa-truck"></i>
+                    <span>Envío disponible a toda República Dominicana</span>
+                </div>
+            </div>
+            
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active px-6 py-3 rounded-full font-semibold transition-all hover:transform hover:scale-105" data-filter="all">
+                    Todos los Tamaños
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full font-semibold transition-all hover:transform hover:scale-105" data-filter="small">
+                    Pequeños
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full font-semibold transition-all hover:transform hover:scale-105" data-filter="medium">
+                    Medianos
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full font-semibold transition-all hover:transform hover:scale-105" data-filter="large">
+                    Grandes
+                </button>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productsGrid">
+                
+                <!-- Product Card Template - 6x9 100 units -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:border-primary-200 transition-all duration-300" data-category="small">
+                    <div class="p-6">
+                        <!-- Size Visual -->
+                        <div class="w-full h-32 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center relative">
+                            <div class="w-16 h-20 bg-blue-300 rounded-md relative">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-red-400 rounded-t-md"></div>
+                            </div>
+                            <div class="absolute bottom-2 right-2 text-xs font-bold text-blue-600">6" × 9"</div>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Material impermeable de alta resistencia</span>
+                        
+                        <!-- Product Info -->
+                        <div class="mb-4">
+                            <h3 class="font-bold text-lg text-gray-900 mb-1">100 Unidades</h3>
+                            <p class="text-sm text-gray-600 mb-2">6" × 9" • Ideal para joyería, cosméticos</p>
+                            <div class="flex items-baseline space-x-2">
+                                <span class="text-2xl font-bold text-primary-600">$9.99</span>
+                                <span class="text-sm text-gray-500">$0.10 / unidad</span>
+                            </div>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Reduce costos de envío por su peso ligero</span>
+                        
+                        <!-- Cart Buttons -->
+                        <div class="cart-button-container space-y-2">
+                            <!-- This will be replaced by JavaScript -->
                         </div>
+                        
+                        <!-- WhatsApp Fallback (hidden initially) -->
+                        <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%206x9%20por%20$9.99" 
+                           class="hidden whatsapp-fallback bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-semibold text-center transition-all hover:transform hover:scale-105 flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Pedir por WhatsApp</span>
+                        </a>
                     </div>
                 </div>
-                <div class="visual-side">
-                    <div class="product-layers">
-                        <div class="layer-demo">
-                            <div class="layer layer-external">
-                                <span>Capa Externa Resistente</span>
-                            </div>
-                            <div class="layer layer-barrier">
-                                <span>Barrera Impermeable</span>
-                            </div>
-                            <div class="layer layer-internal">
-                                <span>Interior Suave</span>
-                            </div>
-                        </div>
+
+                <!-- Product Card - 6x9 1000 units (Best Value) -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:border-primary-200 transition-all duration-300 relative" data-category="small">
+                    <!-- Best Value Badge -->
+                    <div class="absolute top-4 right-4 bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-xs font-bold z-10">
+                        Mejor Valor
                     </div>
+                    
+                    <div class="p-6">
+                        <div class="w-full h-32 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center relative">
+                            <div class="w-16 h-20 bg-blue-300 rounded-md relative">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-red-400 rounded-t-md"></div>
+                            </div>
+                            <div class="absolute bottom-2 right-2 text-xs font-bold text-blue-600">6" × 9"</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h3 class="font-bold text-lg text-gray-900 mb-1">1000 Unidades</h3>
+                            <p class="text-sm text-gray-600 mb-2">6" × 9" • Ideal para joyería, cosméticos</p>
+                            <div class="flex items-baseline space-x-2 mb-2">
+                                <span class="text-2xl font-bold text-primary-600">$39.99</span>
+                                <span class="text-sm text-gray-500">$0.04 / unidad</span>
+                            </div>
+                            <div class="text-sm font-semibold text-green-600">Ahorras 60%</div>
+                        </div>
+                        
+                        <div class="cart-button-container space-y-2"></div>
+                        <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%206x9%20por%20$39.99" 
+                           class="hidden whatsapp-fallback bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-semibold text-center transition-all hover:transform hover:scale-105 flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Pedir por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card - 12x15.5 500 units (Most Popular) -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-primary-300 hover:border-primary-400 transition-all duration-300 relative" data-category="medium">
+                    <!-- Most Popular Badge -->
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary-600 text-white px-4 py-1 rounded-full text-sm font-bold z-10">
+                        MÁS POPULAR
+                    </div>
+                    
+                    <div class="p-6 pt-8">
+                        <div class="w-full h-32 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl mb-4 flex items-center justify-center relative">
+                            <div class="w-20 h-24 bg-primary-300 rounded-md relative">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-red-400 rounded-t-md"></div>
+                            </div>
+                            <div class="absolute bottom-2 right-2 text-xs font-bold text-primary-700">12" × 15.5"</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h3 class="font-bold text-lg text-gray-900 mb-1">500 Unidades</h3>
+                            <p class="text-sm text-gray-600 mb-2">12" × 15.5" • Ropa estándar, zapatos</p>
+                            <div class="flex items-baseline space-x-2 mb-2">
+                                <span class="text-2xl font-bold text-primary-600">$46.99</span>
+                                <span class="text-sm text-gray-500">$0.09 / unidad</span>
+                            </div>
+                            <div class="text-sm font-semibold text-green-600">Ahorras 47%</div>
+                        </div>
+                        
+                        <div class="cart-button-container space-y-2"></div>
+                        <a href="https://wa.me/18494496394?text=Quiero%20500%20unidades%20de%2012x15.5%20por%20$46.99" 
+                           class="hidden whatsapp-fallback bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-semibold text-center transition-all hover:transform hover:scale-105 flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Pedir por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card - 10x13 100 units (Special Offer) -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:border-primary-200 transition-all duration-300 relative" data-category="medium">
+                    <!-- Offer Badge -->
+                    <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
+                        ¡Oferta!
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="w-full h-32 bg-gradient-to-br from-green-50 to-green-100 rounded-xl mb-4 flex items-center justify-center relative">
+                            <div class="w-18 h-22 bg-green-300 rounded-md relative">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-red-400 rounded-t-md"></div>
+                            </div>
+                            <div class="absolute bottom-2 right-2 text-xs font-bold text-green-700">10" × 13"</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h3 class="font-bold text-lg text-gray-900 mb-1">100 Unidades</h3>
+                            <p class="text-sm text-gray-600 mb-2">10" × 13" • Ropa mediana, libros</p>
+                            <div class="flex items-baseline space-x-2 mb-1">
+                                <span class="text-2xl font-bold text-primary-600">$8.99</span>
+                                <span class="text-sm text-gray-400 line-through">$9.99</span>
+                            </div>
+                            <div class="text-sm text-gray-500">$0.09 / unidad</div>
+                        </div>
+                        
+                        <div class="cart-button-container space-y-2"></div>
+                        <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%2010x13%20por%20$8.99" 
+                           class="hidden whatsapp-fallback bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-semibold text-center transition-all hover:transform hover:scale-105 flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Pedir por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Add more product cards here following the same pattern -->
+                
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button id="loadMoreProducts" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-8 py-4 rounded-xl font-semibold transition-all hover:transform hover:scale-105">
+                    Ver Más Tamaños
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="py-20 bg-gradient-to-br from-primary-50 to-indigo-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Perfecto para <span class="text-primary-600">tu negocio</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ideal para emprendedores que buscan proyectar profesionalismo
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Audience 1 -->
+                <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-rocket text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Emprendedores</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Marcas pequeñas y startups que quieren proyectar profesionalismo desde el primer envío y crear una experiencia memorable.
+                    </p>
+                </div>
+                
+                <!-- Audience 2 -->
+                <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shopping-bag text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Tiendas Online</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Instagram, Etsy, marketplaces. Eleva la experiencia de compra de tus clientes con packaging de calidad profesional.
+                    </p>
+                </div>
+                
+                <!-- Audience 3 -->
+                <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-tshirt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Moda & Accesorios</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Boutiques, tiendas de ropa y accesorios que valoran la presentación y quieren que cada envío refleje su marca.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section id="beneficios" class="benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Por qué elegir <span class="highlight">Empácame</span></h2>
-                <p class="section-subtitle">Características que marcan la diferencia en tu negocio</p>
+    <section id="beneficios" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    ¿Por qué elegir <span class="text-primary-600">Empácame</span>?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Cada bolsa está diseñada para elevar tu negocio con características premium que tus clientes notarán
+                </p>
             </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
+
+            <!-- Benefits Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1: Impermeables y Resistentes -->
+                <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 animate-fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                            <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 ml-4">Impermeables y Resistentes</h3>
                     </div>
-                    <h3>Impermeables y Resistentes</h3>
-                    <p>Protección total contra agua y desgarros. Tus productos llegan en perfectas condiciones sin importar las condiciones climáticas.</p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Protección total contra agua y desgarros. Tus productos llegan en perfectas condiciones sin importar las condiciones climáticas.
+                    </p>
+                    <div class="mt-6 flex items-center text-blue-600 font-semibold">
+                        <i class="fas fa-droplet mr-2"></i>
+                        <span>100% Impermeable</span>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-magic"></i>
+
+                <!-- Benefit 2: Sello de Seguridad -->
+                <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 animate-fade-in" style="animation-delay: 0.1s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center group-hover:bg-red-200 transition-colors">
+                            <i class="fas fa-lock text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 ml-4">Sello de Seguridad</h3>
                     </div>
-                    <h3>Sello de Seguridad</h3>
-                    <p>Simplifica tu proceso de empaque. Sin cinta, sin complicaciones. Sellado permanente que garantiza seguridad total.</p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Simplifica tu proceso de empaque. Sin cinta, sin complicaciones. Sellado permanente que garantiza seguridad total.
+                    </p>
+                    <div class="mt-6 flex items-center text-red-600 font-semibold">
+                        <i class="fas fa-stamp mr-2"></i>
+                        <span>Sellado Permanente</span>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-feather-alt"></i>
+
+                <!-- Benefit 3: Ultralivianas -->
+                <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 transition-colors">
+                            <i class="fas fa-feather text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 ml-4">Ultralivianas</h3>
                     </div>
-                    <h3>Ultralivianas</h3>
-                    <p>Reduce significativamente tus costos de envío manteniendo la máxima protección. Más ganancias, menos gastos.</p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Reduce significativamente tus costos de envío manteniendo la máxima protección. Más ganancias, menos gastos.
+                    </p>
+                    <div class="mt-6 flex items-center text-green-600 font-semibold">
+                        <i class="fas fa-coins mr-2"></i>
+                        <span>Ahorra en Envíos</span>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-star"></i>
+
+                <!-- Benefit 4: Presentación Profesional -->
+                <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 animate-fade-in" style="animation-delay: 0.3s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                            <i class="fas fa-star text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 ml-4">Presentación Profesional</h3>
                     </div>
-                    <h3>Presentación Profesional</h3>
-                    <p>Imagen limpia y profesional que eleva la percepción de tu marca. Cada envío es una oportunidad de impresionar.</p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Imagen limpia y profesional que eleva la percepción de tu marca. Cada envío es una oportunidad de impresionar.
+                    </p>
+                    <div class="mt-6 flex items-center text-purple-600 font-semibold">
+                        <i class="fas fa-crown mr-2"></i>
+                        <span>Imagen Premium</span>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-heart"></i>
+
+                <!-- Benefit 5: Versatilidad Total -->
+                <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center group-hover:bg-yellow-200 transition-colors">
+                            <i class="fas fa-gem text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 ml-4">Versatilidad Total</h3>
                     </div>
-                    <h3>Versatilidad Total</h3>
-                    <p>Perfectas para ropa, accesorios, joyería, cosméticos y mucho más. Una solución para todos tus productos.</p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Perfectas para ropa, accesorios, joyería, cosméticos y mucho más. Una solución para todos tus productos.
+                    </p>
+                    <div class="mt-6 flex items-center text-yellow-600 font-semibold">
+                        <i class="fas fa-puzzle-piece mr-2"></i>
+                        <span>Multi-Propósito</span>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-dollar-sign"></i>
+
+                <!-- Benefit 6: Mejor Precio -->
+                <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 animate-fade-in" style="animation-delay: 0.5s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                            <i class="fas fa-dollar-sign text-orange-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 ml-4">Mejor Precio</h3>
                     </div>
-                    <h3>Mejor Precio</h3>
-                    <p>Excelente relación calidad-precio. Invierte en calidad sin comprometer tu presupuesto de packaging.</p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Excelente relación calidad-precio. Invierte en calidad sin comprometer tu presupuesto de packaging.
+                    </p>
+                    <div class="mt-6 flex items-center text-orange-600 font-semibold">
+                        <i class="fas fa-balance-scale mr-2"></i>
+                        <span>Calidad-Precio</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <div class="bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                        ¿Listo para transformar tu packaging?
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Únete a cientos de emprendedores que ya confían en Empácame para proteger y presentar sus productos
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#tienda" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-xl font-semibold transition-all hover:transform hover:scale-105 inline-flex items-center justify-center space-x-2">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Ver Precios</span>
+                        </a>
+                        <a href="https://wa.me/18494496394?text=Hola,%20quiero%20una%20muestra%20gratis%20de%20Empácame" class="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3 rounded-xl font-semibold transition-all hover:transform hover:scale-105 inline-flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp text-green-500"></i>
+                            <span>Muestra Gratis</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Specifications Section -->
-    <section id="especificaciones" class="specifications">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Tamaños y <span class="highlight">Precios</span></h2>
-                <p class="section-subtitle">Encuentra el tamaño perfecto para tu negocio con precios competitivos</p>
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Lo que dicen <span class="text-primary-600">nuestros clientes</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Testimonios reales de emprendedores exitosos
+                </p>
             </div>
             
-            <!-- Filter tabs -->
-            <div class="pricing-filters">
-                <button class="filter-btn active" data-filter="all">Todos los Tamaños</button>
-                <button class="filter-btn" data-filter="small">Pequeños</button>
-                <button class="filter-btn" data-filter="medium">Medianos</button>
-                <button class="filter-btn" data-filter="large">Grandes</button>
-            </div>
-            
-            <!-- Size Groups -->
-            <div class="pricing-groups">
-                
-                <!-- TAMAÑOS PEQUEÑOS -->
-                <div class="size-group" data-category="small">
-                    <div class="size-header">
-                        <div class="size-info">
-                            <h3>6" × 9" <span class="size-subtitle">Ideal para joyería, cosméticos</span></h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            M
                         </div>
-                        <div class="size-visual small-visual"></div>
-                    </div>
-                    <div class="price-options">
-                        <div class="price-option">
-                            <div class="quantity-badge">Prueba</div>
-                            <h4>100 Unidades</h4>
-                            <div class="price-main">US$9.99</div>
-                            <div class="price-unit">US$0.10 / unidad</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%206x9%20por%20$9.99" class="btn-price">Comprar</a>
+                        <div>
+                            <h4 class="font-bold text-gray-900">María González</h4>
+                            <p class="text-sm text-gray-600">Fundadora, Tienda Bella RD</p>
                         </div>
-                        <div class="price-option best-value">
-                            <div class="quantity-badge popular">Mejor Valor</div>
-                            <h4>1000 Unidades</h4>
-                            <div class="price-main">US$39.99</div>
-                            <div class="price-unit">US$0.04 / unidad</div>
-                            <div class="savings">Ahorras 60%</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%206x9%20por%20$39.99" class="btn-price">Comprar</a>
+                        <div class="ml-auto flex space-x-1">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
                         </div>
                     </div>
-                </div>
-
-                <div class="size-group" data-category="small">
-                    <div class="size-header">
-                        <div class="size-info">
-                            <h3>7.5" × 10.5" <span class="size-subtitle">Productos pequeños</span></h3>
-                        </div>
-                        <div class="size-visual small-plus-visual"></div>
-                    </div>
-                    <div class="price-options">
-                        <div class="price-option">
-                            <div class="quantity-badge">Prueba</div>
-                            <h4>100 Unidades</h4>
-                            <div class="price-main">US$9.99</div>
-                            <div class="price-unit">US$0.10 / unidad</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%207.5x10.5%20por%20$9.99" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option">
-                            <div class="quantity-badge">Negocio</div>
-                            <h4>1000 Unidades</h4>
-                            <div class="price-main">US$46.99</div>
-                            <div class="price-unit">US$0.05 / unidad</div>
-                            <div class="savings">Ahorras 50%</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%207.5x10.5%20por%20$46.99" class="btn-price">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAMAÑOS MEDIANOS -->
-                <div class="size-group" data-category="medium">
-                    <div class="size-header">
-                        <div class="size-info">
-                            <h3>9" × 12" <span class="size-subtitle">Ropa ligera, accesorios</span></h3>
-                        </div>
-                        <div class="size-visual medium-visual"></div>
-                    </div>
-                    <div class="price-options">
-                        <div class="price-option">
-                            <div class="quantity-badge">Prueba</div>
-                            <h4>100 Unidades</h4>
-                            <div class="price-main">US$15.95</div>
-                            <div class="price-unit">US$0.16 / unidad</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%209x12%20por%20$15.95" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option">
-                            <div class="quantity-badge">Negocio</div>
-                            <h4>1000 Unidades</h4>
-                            <div class="price-main">US$59.95</div>
-                            <div class="price-unit">US$0.06 / unidad</div>
-                            <div class="savings">Ahorras 62%</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%209x12%20por%20$59.95" class="btn-price">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="size-group" data-category="medium">
-                    <div class="size-header">
-                        <div class="size-info">
-                            <h3>10" × 13" <span class="size-subtitle">Ropa mediana, libros</span></h3>
-                        </div>
-                        <div class="size-visual large-visual"></div>
-                    </div>
-                    <div class="price-options">
-                        <div class="price-option special-offer">
-                            <div class="quantity-badge offer">¡Oferta!</div>
-                            <h4>100 Unidades</h4>
-                            <div class="price-main">US$8.99</div>
-                            <div class="price-unit">US$0.09 / unidad</div>
-                            <div class="original-price">US$9.99</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%2010x13%20por%20$8.99" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option">
-                            <div class="quantity-badge">Negocio</div>
-                            <h4>500 Unidades</h4>
-                            <div class="price-main">US$38.95</div>
-                            <div class="price-unit">US$0.08 / unidad</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20500%20unidades%20de%2010x13%20por%20$38.95" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option">
-                            <div class="quantity-badge">Mayoreo</div>
-                            <h4>1000 Unidades</h4>
-                            <div class="price-main">US$59.99</div>
-                            <div class="price-unit">US$0.06 / unidad</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%2010x13%20por%20$59.99" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option">
-                            <div class="quantity-badge">Distribuidor</div>
-                            <h4>2000 Unidades</h4>
-                            <div class="price-main">US$110.99</div>
-                            <div class="price-unit">US$0.055 / unidad</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%202000%20unidades%20de%2010x13%20por%20$110.99" class="btn-price">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="size-group most-popular" data-category="medium">
-                    <div class="popular-ribbon">MÁS POPULAR</div>
-                    <div class="size-header">
-                        <div class="size-info">
-                            <h3>12" × 15.5" <span class="size-subtitle">Ropa estándar, zapatos</span></h3>
-                        </div>
-                        <div class="size-visual xlarge-visual"></div>
-                    </div>
-                    <div class="price-options">
-                        <div class="price-option">
-                            <div class="quantity-badge">Prueba</div>
-                            <h4>100 Unidades</h4>
-                            <div class="price-main">US$16.90</div>
-                            <div class="price-unit">US$0.17 / unidad</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%2012x15.5%20por%20$16.90" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option best-value">
-                            <div class="quantity-badge popular">⭐ Mejor Opción</div>
-                            <h4>500 Unidades</h4>
-                            <div class="price-main">US$46.99</div>
-                            <div class="price-unit">US$0.09 / unidad</div>
-                            <div class="savings">Ahorras 47%</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20500%20unidades%20de%2012x15.5%20por%20$46.99" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option">
-                            <div class="quantity-badge">Mayoreo</div>
-                            <h4>1000 Unidades</h4>
-                            <div class="price-main">US$89.99</div>
-                            <div class="price-unit">US$0.09 / unidad</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%2012x15.5%20por%20$89.99" class="btn-price">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAMAÑOS GRANDES -->
-                <div class="size-group" data-category="large">
-                    <div class="size-header">
-                        <div class="size-info">
-                            <h3>14.5" × 19" <span class="size-subtitle">Ropa grande, múltiples productos</span></h3>
-                        </div>
-                        <div class="size-visual extra-large-visual"></div>
-                    </div>
-                    <div class="price-options">
-                        <div class="price-option">
-                            <div class="quantity-badge">Prueba</div>
-                            <h4>100 Unidades</h4>
-                            <div class="price-main">US$19.99</div>
-                            <div class="price-unit">US$0.20 / unidad</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%2014.5x19%20por%20$19.99" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option">
-                            <div class="quantity-badge">Negocio</div>
-                            <h4>400 Unidades</h4>
-                            <div class="price-main">US$69.99</div>
-                            <div class="price-unit">US$0.17 / unidad</div>
-                            <div class="savings">Ahorras 15%</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20400%20unidades%20de%2014.5x19%20por%20$69.99" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option">
-                            <div class="quantity-badge">Mayoreo</div>
-                            <h4>1000 Unidades</h4>
-                            <div class="price-main">US$149.99</div>
-                            <div class="price-unit">US$0.15 / unidad</div>
-                            <div class="savings">Ahorras 25%</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%2014.5x19%20por%20$149.99" class="btn-price">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="size-group" data-category="large">
-                    <div class="size-header">
-                        <div class="size-info">
-                            <h3>19" × 24" <span class="size-subtitle">Productos voluminosos, múltiples items</span></h3>
-                        </div>
-                        <div class="size-visual jumbo-visual"></div>
-                    </div>
-                    <div class="price-options">
-                        <div class="price-option">
-                            <div class="quantity-badge">Mini</div>
-                            <h4>50 Unidades</h4>
-                            <div class="price-main">US$19.98</div>
-                            <div class="price-unit">US$0.40 / unidad</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%2050%20unidades%20de%2019x24%20por%20$19.98" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option">
-                            <div class="quantity-badge">Prueba</div>
-                            <h4>100 Unidades</h4>
-                            <div class="price-main">US$35.95</div>
-                            <div class="price-unit">US$0.36 / unidad</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%2019x24%20por%20$35.95" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option">
-                            <div class="quantity-badge">Negocio</div>
-                            <h4>200 Unidades</h4>
-                            <div class="price-main">US$68.90</div>
-                            <div class="price-unit">US$0.34 / unidad</div>
-                            <div class="savings">Ahorras 15%</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20200%20unidades%20de%2019x24%20por%20$68.90" class="btn-price">Comprar</a>
-                        </div>
-                        <div class="price-option">
-                            <div class="quantity-badge">Mayoreo</div>
-                            <h4>400 Unidades</h4>
-                            <div class="price-main">US$99.99</div>
-                            <div class="price-unit">US$0.25 / unidad</div>
-                            <div class="savings">Ahorras 37%</div>
-                            <a href="https://wa.me/18494496394?text=Quiero%20400%20unidades%20de%2019x24%20por%20$99.99" class="btn-price">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <!-- Fila 1 - 5 tarjetas -->
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box small"></div>
-                        <span class="size-label">6" × 9"</span>
-                    </div>
-                    <h3>100 Unidades</h3>
-                    <div class="price">US$9.99</div>
-                    <div class="price-per-unit">US$0.10 / unidad</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box small"></div>
-                        <span class="size-label">6" × 9"</span>
-                    </div>
-                    <h3>1000 Unidades</h3>
-                    <div class="price">US$39.99</div>
-                    <div class="price-per-unit">US$0.04 / unidad</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box small-plus"></div>
-                        <span class="size-label">7.5" × 10.5"</span>
-                    </div>
-                    <h3>100 Unidades</h3>
-                    <div class="price">US$9.99</div>
-                    <div class="price-per-unit">US$0.10 / unidad</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box small-plus"></div>
-                        <span class="size-label">7.5" × 10.5"</span>
-                    </div>
-                    <h3>1000 Unidades</h3>
-                    <div class="price">US$46.99</div>
-                    <div class="price-per-unit">US$0.05 / unidad</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box medium"></div>
-                        <span class="size-label">9" × 12"</span>
-                    </div>
-                    <h3>100 Unidades</h3>
-                    <div class="price">US$15.95</div>
-                    <div class="price-per-unit">US$0.16 / unidad</div>
-                </div>
-                
-                <!-- Fila 2 - 5 tarjetas -->
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box medium"></div>
-                        <span class="size-label">9" × 12"</span>
-                    </div>
-                    <h3>1000 Unidades</h3>
-                    <div class="price">US$59.95</div>
-                    <div class="price-per-unit">US$0.06 / unidad</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box large"></div>
-                        <span class="size-label">10" × 13"</span>
-                    </div>
-                    <h3>100 Unidades</h3>
-                    <div class="price">US$8.99</div>
-                    <div class="price-per-unit">US$0.09 / unidad</div>
-                    <div class="original-price">US$9.99</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box large"></div>
-                        <span class="size-label">10" × 13"</span>
-                    </div>
-                    <h3>500 Unidades</h3>
-                    <div class="price">US$38.95</div>
-                    <div class="price-per-unit">US$0.08 / unidad</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box large"></div>
-                        <span class="size-label">10" × 13"</span>
-                    </div>
-                    <h3>1000 Unidades</h3>
-                    <div class="price-from">1 opción desde</div>
-                    <div class="price">US$59.99</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box large"></div>
-                        <span class="size-label">10" × 13"</span>
-                    </div>
-                    <h3>2000 Unidades</h3>
-                    <div class="price-from">1 opción desde</div>
-                    <div class="price">US$110.99</div>
-                </div>
-                
-                <!-- Fila 3 - 5 tarjetas -->
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box xlarge"></div>
-                        <span class="size-label">12" × 15.5"</span>
-                    </div>
-                    <h3>100 Unidades</h3>
-                    <div class="price">US$16.90</div>
-                    <div class="price-per-unit">US$0.17 / unidad</div>
-                </div>
-                
-                <div class="price-card popular">
-                    <div class="popular-badge">Más Popular</div>
-                    <div class="size-visual">
-                        <div class="size-box xlarge"></div>
-                        <span class="size-label">12" × 15.5"</span>
-                    </div>
-                    <h3>500 Unidades</h3>
-                    <div class="price">US$46.99</div>
-                    <div class="price-per-unit">US$0.09 / unidad</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box xlarge"></div>
-                        <span class="size-label">12" × 15.5"</span>
-                    </div>
-                    <h3>1000 Unidades</h3>
-                    <div class="price-from">1 opción desde</div>
-                    <div class="price">US$89.99</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box extra-large"></div>
-                        <span class="size-label">14.5" × 19"</span>
-                    </div>
-                    <h3>100 Unidades</h3>
-                    <div class="price">US$19.99</div>
-                    <div class="price-per-unit">US$0.20 / unidad</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box extra-large"></div>
-                        <span class="size-label">14.5" × 19"</span>
-                    </div>
-                    <h3>400 Unidades</h3>
-                    <div class="price">US$69.99</div>
-                    <div class="price-per-unit">US$0.17 / unidad</div>
-                </div>
-                
-                <!-- Fila 4 - 5 tarjetas -->
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box extra-large"></div>
-                        <span class="size-label">14.5" × 19"</span>
-                    </div>
-                    <h3>1000 Unidades</h3>
-                    <div class="price-from">1 opción desde</div>
-                    <div class="price">US$149.99</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box jumbo"></div>
-                        <span class="size-label">19" × 24"</span>
-                    </div>
-                    <h3>50 Unidades</h3>
-                    <div class="price">US$19.98</div>
-                    <div class="price-per-unit">US$0.40 / unidad</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box jumbo"></div>
-                        <span class="size-label">19" × 24"</span>
-                    </div>
-                    <h3>100 Unidades</h3>
-                    <div class="price">US$35.95</div>
-                    <div class="price-per-unit">US$0.36 / unidad</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box jumbo"></div>
-                        <span class="size-label">19" × 24"</span>
-                    </div>
-                    <h3>200 Unidades</h3>
-                    <div class="price">US$68.90</div>
-                    <div class="price-per-unit">US$0.34 / unidad</div>
-                </div>
-                
-                <div class="price-card">
-                    <div class="size-visual">
-                        <div class="size-box jumbo"></div>
-                        <span class="size-label">19" × 24"</span>
-                    </div>
-                    <h3>400 Unidades</h3>
-                    <div class="price-from">1 opción desde</div>
-                    <div class="price">US$99.99</div>
-                </div>
-            </div>
-            
-            <div class="pricing-info">
-                <div class="info-card">
-                    <h3>💡 ¿Por qué elegir paquetes grandes?</h3>
-                    <p>Ahorra hasta <strong>75%</strong> por unidad comprando en cantidades mayores. Perfecto para negocios en crecimiento.</p>
-                </div>
-                <div class="info-card">
-                    <h3>🚚 Envío Gratuito</h3>
-                    <p>Envío gratis en toda República Dominicana para pedidos superiores a <strong>US$50</strong>.</p>
-                </div>
-                <div class="info-card">
-                    <h3>📞 Precios Especiales</h3>
-                    <p>¿Necesitas cantidades personalizadas? Contáctanos para cotizaciones especiales al por mayor.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Target Audience -->
-    <section class="target-audience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Perfecto para <span class="highlight">tu negocio</span></h2>
-                <p class="section-subtitle">Ideal para emprendedores que buscan proyectar profesionalismo</p>
-            </div>
-            <div class="audience-grid">
-                <div class="audience-card">
-                    <div class="audience-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Emprendedores</h3>
-                    <p>Marcas pequeñas y startups que quieren proyectar profesionalismo desde el primer envío y crear una experiencia memorable.</p>
-                </div>
-                <div class="audience-card">
-                    <div class="audience-icon">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <h3>Tiendas Online</h3>
-                    <p>Instagram, Etsy, marketplaces. Eleva la experiencia de compra de tus clientes con packaging de calidad profesional.</p>
-                </div>
-                <div class="audience-card">
-                    <div class="audience-icon">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                    <h3>Moda & Accesorios</h3>
-                    <p>Boutiques, tiendas de ropa y accesorios que valoran la presentación y quieren que cada envío refleje su marca.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonios" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Lo que dicen <span class="highlight">nuestros clientes</span></h2>
-                <p class="section-subtitle">Testimonios reales de emprendedores exitosos</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="quote-icon">
+                    <div class="text-blue-500 text-4xl mb-4">
                         <i class="fas fa-quote-left"></i>
                     </div>
-                    <p class="testimonial-text">
+                    <p class="text-gray-700 leading-relaxed italic">
                         "Desde que uso Empácame, mis paquetes llegan impecables y he reducido significativamente 
                         mis costos de envío. La diferencia en la experiencia de mis clientes ha sido notable."
                     </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <h4>María González</h4>
-                            <span>Fundadora, Tienda Bella RD</span>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            J
                         </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-900">José Martínez</h4>
+                            <p class="text-sm text-gray-600">CEO, Accesorios Premium</p>
+                        </div>
+                        <div class="ml-auto flex space-x-1">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="quote-icon">
+                    <div class="text-green-500 text-4xl mb-4">
                         <i class="fas fa-quote-left"></i>
                     </div>
-                    <p class="testimonial-text">
+                    <p class="text-gray-700 leading-relaxed italic">
                         "La presentación es limpia y profesional, mis clientes lo notan inmediatamente. 
                         He recibido varios comentarios positivos sobre el empaque. Una inversión que vale la pena."
                     </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">J</div>
-                        <div class="author-info">
-                            <h4>José Martínez</h4>
-                            <span>CEO, Accesorios Premium</span>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            A
                         </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Ana Rodríguez</h4>
+                            <p class="text-sm text-gray-600">Propietaria, Boutique Elegancia</p>
+                        </div>
+                        <div class="ml-auto flex space-x-1">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="quote-icon">
+                    <div class="text-purple-500 text-4xl mb-4">
                         <i class="fas fa-quote-left"></i>
                     </div>
-                    <p class="testimonial-text">
+                    <p class="text-gray-700 leading-relaxed italic">
                         "Excelente calidad y muy fáciles de usar. El sello de seguridad me ahorra mucho tiempo 
                         en el proceso de empaque. Sin duda las mejores bolsas que he probado."
                     </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
-                        <div class="author-info">
-                            <h4>Ana Rodríguez</h4>
-                            <span>Propietaria, Boutique Elegancia</span>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section id="comprar" class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">
-                    Transforma tu negocio <span class="highlight">hoy mismo</span>
+    <section class="py-20 bg-gradient-to-br from-primary-600 to-purple-700 relative overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-white rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow"></div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow animation-delay-2000"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                    Transforma tu negocio <span class="text-yellow-300">hoy mismo</span>
                 </h2>
-                <p class="cta-subtitle">
+                
+                <p class="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed">
                     Únete a cientos de emprendedores que ya confían en Empácame para proteger sus productos 
                     y crear experiencias excepcionales para sus clientes.
                 </p>
-                <div class="pricing-card">
-                    <div class="price-tag">
-                        <span class="currency">Desde US$</span>
-                        <span class="amount">8.99</span>
-                    </div>
-                    <div class="price-details">
-                        <p>Múltiples tamaños disponibles</p>
-                        <p>Envío gratuito en pedidos +US$50</p>
-                        <p>Soporte personalizado</p>
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="https://wa.me/18494496394?text=Hola,%20quiero%20ver%20todos%20los%20precios%20y%20tama%C3%B1os%20disponibles%20de%20las%20bolsas%20Emp%C3%A1came.%20%C2%BFMe%20pueden%20enviar%20la%20lista%20completa?" class="btn btn-primary btn-large">
-                            <i class="fas fa-shopping-cart"></i>
-                            Ver Todos los Precios
-                        </a>
-                        <a href="#especificaciones" class="btn btn-secondary btn-large">
-                            <i class="fas fa-list"></i>
-                            Comparar Tamaños
-                        </a>
+                
+                <!-- Pricing Highlight -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
+                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-3xl md:text-4xl font-bold text-yellow-300 mb-2">Desde $8.99</div>
+                            <div class="text-blue-100">11 tamaños disponibles</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl md:text-4xl font-bold text-yellow-300 mb-2">Envío RD</div>
+                            <div class="text-blue-100">A toda República Dominicana</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl md:text-4xl font-bold text-yellow-300 mb-2">24/7</div>
+                            <div class="text-blue-100">Soporte por WhatsApp</div>
+                        </div>
                     </div>
                 </div>
-                <div class="trust-badges">
-                    <div class="trust-item">
-                        <i class="fas fa-shield-check"></i>
-                        <span>Pago Seguro</span>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#tienda" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Ver Todos los Precios</span>
+                    </a>
+                    <a href="https://wa.me/18494496394?text=Hola,%20quiero%20más%20información%20sobre%20Empácame" class="bg-white/20 hover:bg-white/30 text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:transform hover:scale-105 backdrop-blur-sm flex items-center space-x-2">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Contactar por WhatsApp</span>
+                    </a>
+                </div>
+                
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap justify-center items-center gap-8 mt-12 text-blue-100">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-shield-check text-2xl text-green-400"></i>
+                        <span class="font-semibold">Pago Seguro</span>
                     </div>
-                    <div class="trust-item">
-                        <i class="fas fa-truck"></i>
-                        <span>Envío Incluido</span>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-truck text-2xl text-blue-400"></i>
+                        <span class="font-semibold">Envío Disponible</span>
                     </div>
-                    <div class="trust-item">
-                        <i class="fas fa-medal"></i>
-                        <span>Garantía de Calidad</span>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-medal text-2xl text-yellow-400"></i>
+                        <span class="font-semibold">Garantía de Calidad</span>
                     </div>
                 </div>
             </div>
@@ -844,50 +952,443 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>📦 Empácame</h3>
-                    <p>Protección profesional para tus envíos</p>
-                    <div class="social-links">
-                        <a href="https://instagram.com/empacame"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/18494496394?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Emp%C3%A1came" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:info@empacame.com"><i class="fas fa-envelope"></i></a>
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-3xl">📦</span>
+                        <span class="text-2xl font-bold">Empácame</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Protección profesional para tus envíos. Bolsas impermeables con sello de seguridad 
+                        que elevan la experiencia de tus clientes.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/18494496394" class="w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:info@empacame.com" class="w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="footer-contact">
-                    <h4>Contacto</h4>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>849-449-6394</span>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contacto</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-primary-400"></i>
+                            <span class="text-gray-400">849-449-6394</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-primary-400"></i>
+                            <span class="text-gray-400">info@empacame.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-primary-400"></i>
+                            <span class="text-gray-400">Santo Domingo, República Dominicana</span>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@empacame.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Santo Domingo, República Dominicana</span>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Enlaces Rápidos</h4>
+                    <div class="space-y-2">
+                        <a href="#productos" class="block text-gray-400 hover:text-white transition-colors">Productos</a>
+                        <a href="#beneficios" class="block text-gray-400 hover:text-white transition-colors">Beneficios</a>
+                        <a href="#testimonios" class="block text-gray-400 hover:text-white transition-colors">Testimonios</a>
+                        <a href="#tienda" class="block text-gray-400 hover:text-white transition-colors">Tienda</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Empácame. Todos los derechos reservados. Diseñado con ❤️ para emprendedores dominicanos.</p>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2025 Empácame. Todos los derechos reservados. 
+                    Diseñado con ❤️ para emprendedores dominicanos.
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <div class="whatsapp-float">
-        <a href="https://wa.me/18494496394?text=Hola,%20estoy%20interesado%20en%20las%20bolsas%20de%20env%C3%ADo%20Emp%C3%A1came.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n?" target="_blank">
+    <!-- WhatsApp Float Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/18494496394?text=Hola,%20estoy%20interesado%20en%20las%20bolsas%20de%20envío%20Empácame" 
+           class="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:shadow-xl transition-all hover:transform hover:scale-110 animate-pulse-slow">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 
-    <!-- JavaScript -->
-    <script src="assets/js/proland-script.js"></script>
-    <script src="assets/js/pricing-filters.js"></script>
-    <script src="assets/js/scroll-animations.js"></script>
+    <!-- Cart System (Will be injected by JavaScript) -->
+    <div id="cartSystem"></div>
+
+    <!-- Loading the Cart System Script -->
+    <script src="ecommerce/cart-system.js"></script>
+    
+    <!-- DISABLED TESTING SCRIPTS -->
+    <!-- <script src="ecommerce/final-solution.js"></script> -->
+    <!-- <script src="ecommerce/fix-navigation.js"></script> -->
+    <!-- <script src="ecommerce/cleanup-checkout.js"></script> -->
+    <!-- <script src="ecommerce/cart-initializer.js"></script> -->
+    
+    <!-- Test Fixes (DISABLED - Solo para desarrollo) -->
+    <!-- <script src="ecommerce/test-fixes.js"></script> -->
+    
+    <!-- Cart Testing (DISABLED - Solo para desarrollo) -->
+    <!-- <script src="ecommerce/cart-testing.js"></script> -->
+    
+    <!-- Cart Verification (DISABLED - Solo para desarrollo) -->
+    <!-- <script src="ecommerce/cart-verification.js"></script> -->
+    
+    <!-- Quick Diagnosis (DISABLED - Solo para desarrollo) -->
+    <!-- <script src="ecommerce/quick-diagnosis.js"></script> -->
+    
+    <!-- Cart Diagnostic (DISABLED - Solo para desarrollo) -->
+    <!-- <script src="ecommerce/payments/cart-diagnostic.js"></script> -->
+    
+    <!-- Payment System Scripts - ORDEN CORRECTO -->
+    <script src="ecommerce/payments/config/payment-config.js"></script>
+    <script src="ecommerce/payments/config/paypal-setup.js"></script>
+    <script src="ecommerce/payments/utils/validation.js"></script>
+    <script src="ecommerce/payments/utils/formatting.js"></script>
+    <script src="ecommerce/payments/interfaces/payment-processor.js"></script>
+    <script src="ecommerce/payments/paypal-processor-simple.js"></script>
+    <!-- Testing Scripts (DISABLED - Solo para desarrollo) -->
+    <!-- <script src="ecommerce/payments/quick-test.js"></script> -->
+    <script src="ecommerce/payments/payment-manager.js"></script>
+    <script src="ecommerce/payments/payment-integration.js"></script>
+    <!-- <script src="ecommerce/payments/integration-test.js"></script> -->
+    <!-- <script src="ecommerce/payments/checkout-test.js"></script> -->
+    <!-- <script src="ecommerce/payments/simple-debug.js"></script> -->
+    <script src="ecommerce/payments/payment-system-initializer.js"></script>
+    <!-- <script src="ecommerce/payments/testing-guide.js"></script> -->
+    
+    <!-- Main JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Filter functionality
+        function setupFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            // Style active filter button
+            function updateActiveFilter(activeButton) {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-blue-600', 'text-white');
+                    btn.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+                });
+                
+                activeButton.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+                activeButton.classList.add('active', 'bg-blue-600', 'text-white');
+            }
+
+            // Initialize first button as active
+            if (filterButtons.length > 0) {
+                updateActiveFilter(filterButtons[0]);
+            }
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    updateActiveFilter(button);
+                    
+                    const filter = button.getAttribute('data-filter');
+                    
+                    productCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'block';
+                            card.classList.add('animate-scale-in');
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Product data structure (corregido y limpio)
+        const PRODUCT_DATA = {
+            '6x9-100': {
+                sizeKey: '6x9',
+                quantity: 100,
+                name: '6" × 9"',
+                subtitle: 'Ideal para joyería, cosméticos',
+                price: 9.99,
+                whatsappUrl: 'https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%206x9%20por%20$9.99'
+            },
+            '6x9-1000': {
+                sizeKey: '6x9',
+                quantity: 1000,
+                name: '6" × 9"',
+                subtitle: 'Ideal para joyería, cosméticos',
+                price: 39.99,
+                whatsappUrl: 'https://wa.me/18494496394?text=Quiero%201000%20unidades%20de%206x9%20por%20$39.99'
+            },
+            '12x15.5-500': {
+                sizeKey: '12x15.5',
+                quantity: 500,
+                name: '12" × 15.5"',
+                subtitle: 'Ropa estándar, zapatos',
+                price: 46.99,
+                whatsappUrl: 'https://wa.me/18494496394?text=Quiero%20500%20unidades%20de%2012x15.5%20por%20$46.99'
+            },
+            '10x13-100': {
+                sizeKey: '10x13',
+                quantity: 100,
+                name: '10" × 13"',
+                subtitle: 'Ropa mediana, libros',
+                price: 8.99,
+                whatsappUrl: 'https://wa.me/18494496394?text=Quiero%20100%20unidades%20de%2010x13%20por%20$8.99'
+            }
+        };
+
+        // Initialize cart buttons for each product
+        function initializeCartButtons() {
+            console.log('🔄 Inicializando botones de carrito...');
+            
+            const cartContainers = document.querySelectorAll('.cart-button-container');
+            console.log('📦 Encontrados', cartContainers.length, 'contenedores de carrito');
+            
+            // Map containers to specific products in the correct order
+            const productMapping = [
+                '6x9-100',      // First card: 6x9 100 units
+                '6x9-1000',     // Second card: 6x9 1000 units  
+                '12x15.5-500',  // Third card: 12x15.5 500 units
+                '10x13-100'     // Fourth card: 10x13 100 units
+            ];
+            
+            cartContainers.forEach((container, index) => {
+                container.innerHTML = ''; // Clear existing content
+                
+                const productKey = productMapping[index];
+                if (productKey && PRODUCT_DATA[productKey]) {
+                    const productInfo = PRODUCT_DATA[productKey];
+                    console.log(`✅ Creando botones para producto ${index + 1}:`, productKey);
+                    
+                    // Create cart button HTML with blue colors instead of primary
+                    container.innerHTML = `
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-xl font-semibold transition-all hover:transform hover:scale-105 flex items-center justify-center space-x-2 add-to-cart-btn" 
+                                onclick="addToCartWithFeedback('${productInfo.sizeKey}', ${productInfo.quantity}, this)">
+                            <i class="fas fa-cart-plus"></i>
+                            <span>Agregar al Carrito</span>
+                        </button>
+                        <div class="flex gap-2 mt-2">
+                            <button class="flex-1 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-center space-x-1"
+                                    onclick="window.open('${productInfo.whatsappUrl}', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    console.log(`❌ No se encontró producto para índice ${index}:`, productKey);
+                }
+            });
+            
+            console.log('✅ Botones de carrito inicializados');
+        }
+
+        // Cart functions (to be used with cart-system.js)
+        function addToCartWithFeedback(sizeKey, quantity, buttonElement) {
+            console.log('🛒 Agregando al carrito:', sizeKey, quantity);
+            
+            if (typeof window.empacameCart !== 'undefined') {
+                // Show loading state
+                buttonElement.classList.add('loading');
+                buttonElement.disabled = true;
+                
+                // Add to cart using the correct method
+                const success = window.empacameCart.addToCart(sizeKey, quantity);
+                
+                if (success) {
+                    // Show success feedback
+                    showCartNotification('¡Producto agregado al carrito!');
+                    console.log('✅ Producto agregado exitosamente');
+                } else {
+                    console.error('❌ Error al agregar producto');
+                    showCartNotification('Error al agregar producto', 'error');
+                }
+                
+                // Remove loading state
+                setTimeout(() => {
+                    buttonElement.classList.remove('loading');
+                    buttonElement.disabled = false;
+                }, 500);
+                
+            } else {
+                console.warn('⚠️ Cart system not loaded, falling back to WhatsApp');
+                // Find the WhatsApp button in the same container and click it
+                const container = buttonElement.closest('.cart-button-container');
+                const whatsappBtn = container.querySelector('[onclick*="whatsapp"]');
+                if (whatsappBtn) {
+                    whatsappBtn.click();
+                }
+            }
+        }
+        
+        // Show cart notification
+        function showCartNotification(message, type = 'success') {
+            // Remove existing notifications
+            const existing = document.querySelector('.cart-notification');
+            if (existing) {
+                existing.remove();
+            }
+            
+            // Create notification
+            const notification = document.createElement('div');
+            notification.className = `cart-notification ${type === 'error' ? 'bg-red-500' : 'bg-green-500'}`;
+            notification.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <i class="fas ${type === 'error' ? 'fa-exclamation-triangle' : 'fa-check-circle'}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Show notification
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            // Hide notification after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // Intersection Observer for animations
+        function setupAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe all elements that should animate
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // Load more products functionality
+        function setupLoadMore() {
+            const loadMoreBtn = document.getElementById('loadMoreProducts');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    // Here you would typically load more products
+                    // For now, we'll just show an alert
+                    alert('🚀 Más productos próximamente!\n\nPor ahora puedes contactarnos por WhatsApp para cotizaciones personalizadas.');
+                });
+            }
+        }
+
+        // Navbar scroll effect
+        function setupNavbarScroll() {
+            let lastScrollTop = 0;
+            const navbar = document.querySelector('nav');
+
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Empácame Tailwind iniciado');
+            
+            // Setup all functionality
+            setupFilters();
+            setupAnimations();
+            setupLoadMore();
+            setupNavbarScroll();
+            
+            // Initialize cart buttons after a short delay to ensure cart system is loaded
+            setTimeout(() => {
+                console.log('🚀 Ejecutando inicialización de botones...');
+                console.log('📊 ¿PRODUCT_DATA existe?', typeof PRODUCT_DATA !== 'undefined');
+                console.log('🛒 ¿Cart system existe?', typeof window.empacameCart !== 'undefined');
+                initializeCartButtons();
+                console.log('✅ Botones de carrito inicializados');
+            }, 100);
+            
+            // Log when cart system is ready
+            if (typeof window.empacameCart !== 'undefined') {
+                console.log('✅ Sistema de carrito disponible');
+            } else {
+                console.log('⏳ Esperando sistema de carrito...');
+                // Try again after cart system loads
+                setTimeout(() => {
+                    if (typeof window.empacameCart !== 'undefined') {
+                        console.log('✅ Sistema de carrito cargado');
+                    }
+                }, 500);
+            }
+        });
+
+        // Global functions for cart integration
+        window.addToCartWithFeedback = addToCartWithFeedback;
+    </script>
+    
+    <!-- Nuevos Sistemas Mejorados -->
+    <!-- Sistema de Inventario (DISABLED - Interfiere con agregar productos) -->
+    <!-- <script src="ecommerce/inventory-system.js"></script> -->
+    
+    <!-- Sistema de Notificaciones por Email -->
+    <script src="ecommerce/email-notifications.js"></script>
+    
+    <!-- Sistema de Newsletter -->
+    <script src="ecommerce/newsletter-system.js"></script>
+    
+    <!-- Additional CSS for filter buttons -->
 </body>
 </html>
