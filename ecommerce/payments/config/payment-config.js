@@ -13,7 +13,7 @@ const PaymentConfig = {
         fallbackCurrency: 'USD',
         timeout: 30000, // 30 segundos
         retryAttempts: 3,
-        environment: 'sandbox', // Cambiar a 'production' cuando esté listo para ventas reales
+        environment: 'production', // ✅ MODO PRODUCCIÓN ACTIVADO
         
         // 🏪 Información del comercio
         merchant: {

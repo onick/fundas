@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Pago Exitoso! - Empácame</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-orange-700 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-box text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">Empácame</span>
+                </div>
+                <a href="/" class="text-orange-600 hover:text-orange-700 font-medium">
+                    <i class="fas fa-home mr-2"></i>Volver al inicio
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Success Content -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="max-w-2xl mx-auto">
+            <!-- Success Icon -->
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-24 h-24 bg-green-100 rounded-full mb-6">
+                    <i class="fas fa-check-circle text-green-500 text-4xl"></i>
+                </div>
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">¡Pago Exitoso!</h1>
+                <p class="text-xl text-gray-600">Tu compra ha sido procesada correctamente</p>
+            </div>
+
+            <!-- Order Details Card -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                <div class="border-b border-gray-200 pb-6 mb-6">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-2">Detalles del Pedido</h2>
+                    <p class="text-gray-600">Recibirás un email de confirmación en los próximos minutos.</p>
+                </div>
+
+                <!-- Success Steps -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-green-600 text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Pago Confirmado</h3>
+                            <p class="text-gray-600 text-sm">Tu pago ha sido procesado por PayPal</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-email text-blue-600 text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Confirmación Enviada</h3>
+                            <p class="text-gray-600 text-sm">Recibirás los detalles por email</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-truck text-orange-600 text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Preparando Envío</h3>
+                            <p class="text-gray-600 text-sm">Tu pedido será procesado en 1-2 días hábiles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="bg-orange-50 rounded-lg p-6 mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">¿Necesitas ayuda?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-phone text-orange-600"></i>
+                        <div>
+                            <p class="font-medium text-gray-800">Teléfono</p>
+                            <p class="text-gray-600">849-449-6394</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-envelope text-orange-600"></i>
+                        <div>
+                            <p class="font-medium text-gray-800">Email</p>
+                            <p class="text-gray-600">empacame@outlook.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="text-center space-y-4">
+                <a href="/" class="inline-block bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
+                    <i class="fas fa-home mr-2"></i>Volver al Inicio
+                </a>
+                <br>
+                <a href="mailto:empacame@outlook.com" class="inline-block text-orange-600 hover:text-orange-700 font-medium">
+                    <i class="fas fa-envelope mr-2"></i>Contactar Soporte
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Empácame. Todos los derechos reservados.</p>
+            <p class="text-gray-400 mt-2">Bolsas de envío premium para República Dominicana</p>
+        </div>
+    </footer>
+
+    <script>
+        // Optional: Track successful payment
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'purchase', {
+                'transaction_id': new URLSearchParams(window.location.search).get('tx') || 'unknown',
+                'value': new URLSearchParams(window.location.search).get('amt') || 0,
+                'currency': 'USD'
+            });
+        }
+
+        // Auto-redirect after 30 seconds (optional)
+        setTimeout(() => {
+            const autoRedirect = confirm('¿Quieres volver al inicio automáticamente?');
+            if (autoRedirect) {
+                window.location.href = '/';
+            }
+        }, 30000);
+    </script>
+</body>
+</html>

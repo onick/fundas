@@ -22,7 +22,7 @@ const PAYPAL_CONFIG = {
         supportPhone: '849-449-6394'
     },
     
-    // URLs de retorno (ajustar según tu dominio)
+    // URLs de retorno para empacame.com (producción)
     URLS: {
         returnUrl: 'https://empacame.com/payment-success',
         cancelUrl: 'https://empacame.com/payment-cancel',
