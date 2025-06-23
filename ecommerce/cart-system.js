@@ -20,14 +20,6 @@ class EmpacameCart {
     // Estructura de productos actualizada con tamaños disponibles
     getProducts() {
         return {
-            '6x9': {
-                name: '6" × 9"',
-                subtitle: 'Ideal para joyería, cosméticos',
-                sizes: {
-                    100: { price: 9.99, pricePerUnit: 0.10 },
-                    1000: { price: 39.99, pricePerUnit: 0.04, savings: 60 }
-                }
-            },
             '5x7': {
                 name: '5" × 7"',
                 subtitle: 'Ideal para documentos pequeños, tarjetas',
@@ -42,6 +34,14 @@ class EmpacameCart {
                 sizes: {
                     100: { price: 9.99, pricePerUnit: 0.10 },
                     1000: { price: 39.99, pricePerUnit: 0.04, savings: 60 }
+                }
+            },
+            '5x10': {
+                name: '5" × 10"',
+                subtitle: 'Documentos largos, boletos especiales',
+                sizes: {
+                    100: { price: 10.99, pricePerUnit: 0.11 },
+                    1000: { price: 42.99, pricePerUnit: 0.043, savings: 61 }
                 }
             },
             '9x6': {
@@ -68,6 +68,15 @@ class EmpacameCart {
                     500: { price: 38.95, pricePerUnit: 0.08 },
                     1000: { price: 59.99, pricePerUnit: 0.06 },
                     2000: { price: 110.99, pricePerUnit: 0.055 }
+                }
+            },
+            '12x13': {
+                name: '12" × 13"',
+                subtitle: 'Ropa estándar, productos grandes',
+                sizes: {
+                    100: { price: 15.99, pricePerUnit: 0.16 },
+                    500: { price: 43.99, pricePerUnit: 0.088 },
+                    1000: { price: 82.99, pricePerUnit: 0.083 }
                 }
             },
             '12x15': {
